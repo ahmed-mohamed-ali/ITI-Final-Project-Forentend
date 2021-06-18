@@ -11,6 +11,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 
 //Needer component
 import { CuponComponent } from './components/cupon/cupon.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CuponComponent } from './components/cupon/cupon.component';
     HeaderComponent,
     FooterComponent,
     CuponComponent,
-    HomePageComponent
+    HomePageComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
