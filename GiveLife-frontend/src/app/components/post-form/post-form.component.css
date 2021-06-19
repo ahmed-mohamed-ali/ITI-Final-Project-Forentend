@@ -4,6 +4,11 @@ body {
     font-family: 'Roboto', sans-serif
 }
 
+.form-group {
+    border: #F3A002;
+    border-color: #F3A002;
+}
+
 .card {
     border: none;
     max-width: 450px;
@@ -38,6 +43,13 @@ img:hover {
 }
 
 input {
+    border-bottom: 1.5px solid #E8E5D2 !important;
+    font-weight: bold;
+    border-radius: 0;
+    border: 0
+}
+
+textarea {
     border-bottom: 1.5px solid #E8E5D2 !important;
     font-weight: bold;
     border-radius: 0;

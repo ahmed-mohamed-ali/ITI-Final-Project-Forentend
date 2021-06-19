@@ -15,6 +15,10 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 
 //Needer component
 import { CuponComponent } from './components/cupon/cupon.component';
+
+import { PostFormComponent } from './components/post-form/post-form.component';
+
+//profile component
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { FilterComponent } from './components/filter/filter.component';
@@ -28,7 +32,8 @@ import { FilterComponent } from './components/filter/filter.component';
     HomePageComponent,
     SignUpComponent,
     SignInComponent,
-    FilterComponent
+    FilterComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,
