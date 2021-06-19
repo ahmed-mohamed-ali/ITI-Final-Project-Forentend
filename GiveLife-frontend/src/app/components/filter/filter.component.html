@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="checkbox">
+        <ul>
+            <li *ngFor="let i of checkBoxArray">
+                <input type="{{i.type}}" value="{{i.id}}" (change)="onChange($event)" >{{i.amount}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="amount">
+        <ul>
+            <li *ngFor="let item of donateArray">
+                {{item.amount}}
+            </li>
+        </ul>
+    </div>
+
+</div>

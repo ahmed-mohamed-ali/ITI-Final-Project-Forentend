@@ -1,0 +1,22 @@
+.container {
+    margin-top: 20px;
+}
+
+.checkbox ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.checkbox ul li input {
+    margin-right: 4px;
+}
+
+.amount{
+    margin-top: 20px;
+}
+
+.amount ul li {
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: larger;
+}
