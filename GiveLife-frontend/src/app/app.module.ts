@@ -11,8 +11,12 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 
 //Needer component
 import { CuponComponent } from './components/cupon/cupon.component';
+<<<<<<< Updated upstream
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+=======
+import { PostFormComponent } from './components/post-form/post-form.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -21,8 +25,12 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     FooterComponent,
     CuponComponent,
     HomePageComponent,
+<<<<<<< Updated upstream
     SignUpComponent,
     SignInComponent
+=======
+    PostFormComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-12">
+            <div class="card mx-auto">
+                <form class="card-details ">
+                    <div class="form-group">
+                        <p class="text-warning mb-0">Post Text</p>
+                        <textarea class="form-control" type="text" name="comment" form="usrform" placeholder="Enter text here..." required></textarea>
+
+                        <p class="text-warning mb-0">NationalID</p>
+                        <input class="form-control" type="text" name="name" form="usrform" length="14" placeholder="Id" value="" required>
+                        <div class="row d-flex">
+                            <div class="col-sm-8">
+
+                                <p class="text-warning mb-0">Need Category</p>
+                                <select class="form-control" id="pet-select" form="usrform" required>
+                                    <option value=""></option>
+                                    <option value="dog">Food</option>
+                                    <option value="cat">Medicine</option>
+                                    <option value="hamster">Clothes</option>
+                                    <option value="hamster">Money</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="text-warning mb-0"> Required Amount</p>
+                                <input class="form-control" type="Money" name="exp" placeholder="0.00" form="usrform" size="20" id="exp" value="" required>
+                            </div>
+
+
+                            <div class="col-sm-5 pt-0"> <button type="submit" class="btn btn-primary">Post</button></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
