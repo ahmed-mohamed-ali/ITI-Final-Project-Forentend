@@ -5,7 +5,7 @@
                 <div id="formDiv">
                     <h2>Sign Up</h2>
                     <br>
-                    <form name="signUpForm" #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+                    <form name="signUpForm" #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
             
             
                         <div class="form-group">
@@ -64,12 +64,11 @@
             
                         <div class="form-group">
                             <input class="form-control formElement" type="password" #password="ngModel"
-                                [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password" minlength="6"
+                                [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password" minlength="8" maxlength="8"
                                 required>
                             <div class="msg" *ngIf="password.touched && password.errors">
                                 <span *ngIf="password.errors.required" class="validation-message">password is required.... </span>
-                                <span *ngIf="password.errors.minlength" class="validation-message">password length must be more
-                                    than 6 characters.... </span>
+                                <span *ngIf="password.errors.minlength" class="validation-message">password length must be 8 characters.... </span>
                             </div>
                         </div>
             

@@ -22,7 +22,7 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log("enter submit function");
+    console.log(form);
   }
 
 }
