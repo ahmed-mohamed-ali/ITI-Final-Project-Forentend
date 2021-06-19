@@ -22,6 +22,7 @@ import { PostFormComponent } from './components/post-form/post-form.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FilterComponent } from './components/filter/filter.component';
     SignUpComponent,
     SignInComponent,
     FilterComponent,
-    PostFormComponent
+    PostFormComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
