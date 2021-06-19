@@ -11,7 +11,6 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 
 //Needer component
 import { CuponComponent } from './components/cupon/cupon.component';
-
 import { PostFormComponent } from './components/post-form/post-form.component';
 
 //profile component
