@@ -1,15 +1,15 @@
+//Setup component
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import{TestComponent} from "./test/test.component"
 import { HttpClientModule } from "@angular/common/http";
-import { JwtService } from './service/jwt.service';
-
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+//Authentication component
+import { JwtService } from './service/jwt.service';
 
 //Home page component
 import { HeaderComponent } from './components/header/header.component';
@@ -29,9 +29,7 @@ import { PostComponent } from './components/post/post.component';
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    TestComponent
-=======
+    TestComponent,
     HeaderComponent,
     FooterComponent,
     CuponComponent,
@@ -41,17 +39,13 @@ import { PostComponent } from './components/post/post.component';
     FilterComponent,
     PostFormComponent,
     PostComponent
->>>>>>> 4537c0debdbd8630efcb8745c638354f47fcefd2
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    HttpClientModule
-=======
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
->>>>>>> 4537c0debdbd8630efcb8745c638354f47fcefd2
   ],
   providers: [JwtService],
   bootstrap: [AppComponent]
