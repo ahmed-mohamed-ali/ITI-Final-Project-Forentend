@@ -25,6 +25,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { PostComponent } from './components/post/post.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PostComponent } from './components/post/post.component';
     SignInComponent,
     FilterComponent,
     PostFormComponent,
-    PostComponent
+    PostComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
