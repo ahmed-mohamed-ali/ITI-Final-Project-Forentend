@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
+
+import { Router } from "@angular/router";
+import { FormBuilder } from "@angular/forms";
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -43,5 +49,8 @@ export class ProfileComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+  onSubmit(form: NgForm) {
+    console.log(form);
   }
 }

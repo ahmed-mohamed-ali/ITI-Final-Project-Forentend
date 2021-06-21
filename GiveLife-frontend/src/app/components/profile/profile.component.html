@@ -77,9 +77,11 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+        <div class="form-group">
+            <button type="button" class="btn btn-outline-dark div5" (click)="modal.close('Save click')">
             OK
         </button>
+        </div>
     </div>
 </ng-template>
 
@@ -97,16 +99,23 @@
         </button>
     </div>
     <div class="modal-body">
-        <form>
+        <form name="postform" #postform="ngForm" (ngSubmit)="onSubmit(postform)">
+            <!-- /////////////////////////////////// -->
             <div class="form-group">
                 <p class="text-warning mb-0">Post Text</p>
-                <textarea class="form-control" type="text" name="comment" form="usrform" placeholder="Enter text here..." required></textarea>
+                <textarea class="form-control formElement" type="text" name="posttext" form="usrform" placeholder="Enter text here..." required></textarea>
+                <div class="msg" *ngIf="posttext.touched && posttext.errors">
+                    <span *ngIf="posttext.errors.required">post text is required.... </span>
 
+                </div>
+            </div>
+            <div class="form-group">
                 <p class="text-warning mb-0">NationalID</p>
                 <input class="form-control" type="text" name="name" form="usrform" length="14" placeholder="Id" value="" required>
-                <div class="row d-flex">
-                    <div class="col-sm-8">
-
+            </div>
+            <div class="row d-flex">
+                <div class="col-sm-8">
+                    <div class="form-group">
                         <p class="text-warning mb-0">Need Category</p>
                         <select class="form-control" id="pet-select" form="usrform" required>
                            
@@ -116,12 +125,16 @@
                                     <option value="money">Money</option>
                         </select>
                     </div>
-                    <div class="col-sm-8">
+                </div>
+                <div class="col-sm-8">
+                    <div class="form-group">
                         <p class="text-warning mb-0"> Required Amount</p>
                         <input class="form-control" type="Money" name="exp" placeholder="0.00" form="usrform" size="20" id="exp" value="" required>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-dark" class="div5" (click)="modal.close('Save click')" [disabled]="postform.invalid==true">
                             Publish
                         </button>
                     </div>
@@ -129,6 +142,9 @@
             </div>
         </form>
     </div>
+    <!-- /////////////////// -->
+
+
 
 </ng-template>
 
