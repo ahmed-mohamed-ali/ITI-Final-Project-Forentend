@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import{TestComponent} from "./test/test.component"
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Authentication component
 import { JwtService } from './service/jwt.service';
@@ -48,6 +49,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [JwtService],
   bootstrap: [AppComponent]

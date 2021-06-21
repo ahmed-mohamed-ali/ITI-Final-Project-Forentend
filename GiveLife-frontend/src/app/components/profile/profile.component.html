@@ -1,1 +1,142 @@
-<p>profile works!</p>
+<!-- <ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">
+            Geeks of Geeks
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+  
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="dateOfBirth">
+                    Date of birth
+                </label>
+                <div class="input-group">
+                    <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+
+                    <div class="input-group-append">
+                        <button class="btn 
+                            btn-outline-secondary calendar" (click)="dp.toggle()" type="button">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+            Save
+        </button>
+    </div>
+</ng-template> -->
+
+<ng-template #cupon let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">
+            Cupon
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+  
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <p class="text-warning mb-0">Cupon Identity</p>
+                <p type="text" name="name" placeholder="Identity" value="6868786868668">4576</p>
+
+                <p class="text-warning mb-0">NationalID</p>
+                <p type="text" name="name" placeholder="Id" value="68644448668">29712100455700</p>
+
+
+                <div class="row d-flex">
+                    <div class="col-sm-8">
+                        <p class="text-warning mb-0">Case Name</p>
+                        <p type="text" name="exp" placeholder="Person Name" size="20" id="exp" minlength="20" maxlength="20" value="samira elsayed">samira elsayed</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-warning mb-0">Amount of Money</p>
+                        <p type="Money" name="exp" placeholder="EGP" size="20" id="exp" value="600.00">600.00</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-warning mb-0">Expiration</p>
+                        <p type="date" name="cvv" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="20" maxlength="20" alue="10/12/2022">10/12/2022</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+            OK
+        </button>
+    </div>
+</ng-template>
+
+
+<ng-template #postform let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">
+            Write a Post
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+  
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <p class="text-warning mb-0">Post Text</p>
+                <textarea class="form-control" type="text" name="comment" form="usrform" placeholder="Enter text here..." required></textarea>
+
+                <p class="text-warning mb-0">NationalID</p>
+                <input class="form-control" type="text" name="name" form="usrform" length="14" placeholder="Id" value="" required>
+                <div class="row d-flex">
+                    <div class="col-sm-8">
+
+                        <p class="text-warning mb-0">Need Category</p>
+                        <select class="form-control" id="pet-select" form="usrform" required>
+                           
+                            <option value="dog">Food</option>
+                            <option value="cat">Medicine</option>
+                            <option value="hamster">Clothes</option>
+                            <option value="hamster">Money</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-warning mb-0"> Required Amount</p>
+                        <input class="form-control" type="Money" name="exp" placeholder="0.00" form="usrform" size="20" id="exp" value="" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+                            Publish
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</ng-template>
+
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+    Popup using Angular and Bootstrap
+</button> -->
+<button class="btn btn-lg btn-outline-primary" (click)="openpostform(postform)">Post form</button>
+<br>
+<br>
+<br>
+<button class="btn btn-lg btn-outline-primary" (click)="opencupon(cupon)">generate cupon</button>
