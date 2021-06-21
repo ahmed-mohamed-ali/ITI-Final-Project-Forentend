@@ -12,4 +12,13 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  postsArray : any = [
+    {
+      postId : 0 ,
+      postTxt : "post 1",
+      requiredAmount : 1000,
+      needCatogry : "money",
+      restAmount : 12000
+    },
+  ]
 }
