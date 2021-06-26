@@ -11,9 +11,11 @@
                 <div class="div2" *ngFor="let item of postsArray"><p class="p">Required Amount..</p><p class="form-control input">{{item.requiredAmount}}</p></div>
                 <div class="div3" *ngFor="let item of postsArray"><p class="p">Need Category..</p><p class="form-control input">{{item.needCatogry}}</p></div>
                 <div class="div4" *ngFor="let item of postsArray"><p class="p">Rest Amount..</p><p class="form-control input">{{item.restAmount}}</p></div>
-                <div class="div5"><button type="submit"> Donate <i>♥</i> </button></div>
+                <div class="div5"><button type="submit" (click)="reg()"> Donate <i>♥</i> </button></div>
+                <!--input type="button" class="btn btn-dark" value="Register" (click)="reg()"-->
             </div>
         </div>
     </div>
 </div>
+
 

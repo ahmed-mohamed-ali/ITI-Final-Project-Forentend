@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import{TestComponent} from "./test/test.component"
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Authentication component
 import { JwtService } from './service/jwt.service';
@@ -27,6 +27,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { PostComponent } from './components/post/post.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { DonateComponent } from './components/donate/donate.component';
+//import { DonateComponent } from './components/donate/donate.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +49,10 @@ import { ProfileComponent } from './components/profile/profile.component';
     FilterComponent,
     PostFormComponent,
     PostComponent,
+    //DonateComponent,
 
-
-    ProfileComponent
+    ProfileComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule,
+    NgModule,
 
   ],
   providers: [JwtService],
