@@ -55,7 +55,9 @@ import { AuthGuardService } from './service/auth-guard.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-   
+    NgbModule,
+    RouterModule
+
   ],
   providers: [JwtService,AuthGuardService],
   bootstrap: [AppComponent]

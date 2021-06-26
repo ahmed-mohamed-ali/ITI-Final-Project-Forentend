@@ -23,6 +23,27 @@ getProfile(){
   return  this.httpclient.get(`http://localhost:55720/api/RegionCoordinators/getProfile`,{headers:headers})
 }
 
+/////Randa:sure/////
+
+logout() {
+  localStorage.removeItem('access_token');
+  if(localStorage.getItem('user')){
+
+    localStorage.removeItem('user');
+  }
+  window.location.reload();
+}
+
+public get loggedIn(): boolean{
+  return localStorage.getItem('access_token') !==  null;
+}
+
+public get user(): boolean{
+  return localStorage.getItem('user') !==  null;
+}
+
+////////////////////////////////////////
+
 Register(newUser){
 return  this.httpclient.post(`http://localhost:55720/api/RegionCoordinators/Register`,newUser);
 }
