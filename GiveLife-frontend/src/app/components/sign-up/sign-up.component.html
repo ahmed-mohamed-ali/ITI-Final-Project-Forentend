@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container-fluid">
     <div class="container">
         <div class="row">
@@ -6,11 +7,10 @@
                     <h2>Sign Up</h2>
                     <br>
                     <form name="signUpForm" #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
-            
-            
+
+
                         <div class="form-group">
-                            <input class="form-control formElement" type="text" #name="ngModel" [(ngModel)]="userService.selectedUser.name"
-                                name="name" placeholder="Name" required minlength="3" maxlength="20" pattern="^[a-zA-Z\s]+$">
+                            <input class="form-control formElement" type="text" #name="ngModel" [(ngModel)]="userService.selectedUser.name" name="name" placeholder="Name" required minlength="3" maxlength="20" pattern="^[a-zA-Z\s]+$">
                             <div class="msg" *ngIf="name.touched && name.errors">
                                 <span *ngIf="name.errors.required">name is required.... </span>
                                 <span *ngIf="name.errors.pattern">name field doesnot valid spaces or numbers.... </span>
@@ -20,58 +20,49 @@
                                     3 characters.... </span>
                             </div>
                         </div>
-            
-            
+
+
                         <!-- National ID -->
                         <div class="form-group">
-                            <input class="form-control formElement" type="text" #NID="ngModel" [(ngModel)]="userService.selectedUser.NID"
-                                name="NID" placeholder="National ID" required minlength="14"
-                                pattern="(2|3)[0-9][1-9][0-1][1-9][0-3][1-9](01|02|03|04|11|12|13|14|15|16|17|18|19|21|22|23|24|25|26|27|28|29|31|32|33|34|35|88)\d\d\d\d\d">
+                            <input class="form-control formElement" type="text" #NID="ngModel" [(ngModel)]="userService.selectedUser.NID" name="NID" placeholder="National ID" required minlength="14" pattern="(2|3)[0-9][1-9][0-1][1-9][0-3][1-9](01|02|03|04|11|12|13|14|15|16|17|18|19|21|22|23|24|25|26|27|28|29|31|32|33|34|35|88)\d\d\d\d\d">
                             <div class="msg" *ngIf="NID.touched && NID.errors">
                                 <span *ngIf="NID.errors.required">National ID is required.... </span>
                                 <span *ngIf="NID.errors.pattern">National ID pattern is wroong.... </span>
                                 <span *ngIf="NID.errors.minlength">National ID length must be 14 characters.... </span>
                             </div>
                         </div>
-            
-            
+
+
                         <!-- Visa -->
                         <div class="form-group">
-                            <input class="form-control formElement" type="text" #visa="ngModel" [(ngModel)]="userService.selectedUser.visa"
-                                name="visa" placeholder="Visa" required
-                                pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$">
+                            <input class="form-control formElement" type="text" #visa="ngModel" [(ngModel)]="userService.selectedUser.visa" name="visa" placeholder="Visa" required pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$">
                             <div class="msg" *ngIf="visa.touched && visa.errors">
                                 <span *ngIf="visa.errors.required">visa is required.... </span>
                                 <span *ngIf="visa.errors.pattern">visa field has a spesific pattern you must match it.... </span>
                             </div>
                         </div>
-            
-            
+
+
                         <div class="form-group">
-                            <select aria-label="Default select example" class="form-select form-control formElement" id="region"
-                                    required
-                                    [(ngModel)]="userService.selectedUser.region" name="region"
-                                    #region="ngModel">
+                            <select aria-label="Default select example" class="form-select form-control formElement" id="region" required [(ngModel)]="userService.selectedUser.region" name="region" #region="ngModel">
                               <option style="color: dimgrey;" value="" disabled selected hidden>Select Region</option>
                               <option *ngFor="let i of regions" [value]="i">{{i}}</option>
                             </select>
-                            <div class="msg"  [hidden]="region.valid || region.pristine" class="alert alert-danger">
-                                region is required.... 
+                            <div class="msg" [hidden]="region.valid || region.pristine" class="alert alert-danger">
+                                region is required....
                             </div>
-                          </div>
-            
+                        </div>
 
-            
+
+
                         <div class="form-group">
-                            <input class="form-control formElement" type="password" #password="ngModel"
-                                [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password" minlength="8" maxlength="8"
-                                required>
+                            <input class="form-control formElement" type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password" minlength="8" maxlength="8" required>
                             <div class="msg" *ngIf="password.touched && password.errors">
                                 <span *ngIf="password.errors.required" class="validation-message">password is required.... </span>
                                 <span *ngIf="password.errors.minlength" class="validation-message">password length must be 8 characters.... </span>
                             </div>
                         </div>
-            
+
                         <!-- Button -->
                         <div id="submitBtn" class="form-group">
                             <button type="submit" id="submit" class="button" [disabled]="signUpForm.invalid==true">
@@ -85,5 +76,3 @@
         </div>
     </div>
 </div>
-
-   

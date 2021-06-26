@@ -26,9 +26,11 @@
         <li class="nav-item dropdown">
             <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> <button type="button" class="btn btn-outline-danger"><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-512.png" width="20" height="20"></button> </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"> Login</a></li>
-                <li><a class="dropdown-item" href="#">Reigster </a></li>
+                <li *ngIf="!isLogin()"><a class="dropdown-item" href="signin" routerLink="/signin" (click)="SignInClick();">Sign In</a></li>
+                <li *ngIf="!isLogin()"><a class="dropdown-item" href="signup" routerLink="/signup" (click)="SignUpClick();">Sign Up</a></li>
                 <!-- <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li> -->
+                <li *ngIf="isLogin()"><a class="dropdown-item" href="logout" routerLink="/home" (click)="LogoutClick();">Logout</a></li>
+
             </ul>
 
         </li>
