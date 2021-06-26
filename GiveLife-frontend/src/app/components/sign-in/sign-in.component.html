@@ -28,6 +28,10 @@
                         </div>
 
                         <!-- Button -->
+                        <div class="msg" *ngIf="notexist==true">
+                            <span class="validation-message">national id or password is incorrect </span>
+
+                        </div>
                         <div id="submitBtn" class="form-group">
                             <button type="submit" id="submit" class="button" [disabled]="signInForm.invalid==true">
                                 SUBMIT </button>

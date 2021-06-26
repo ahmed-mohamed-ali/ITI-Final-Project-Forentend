@@ -53,6 +53,42 @@ this.subscriber=this.jwtservice.login(this.user).subscribe(res =>{
     })
   }
 
+  getCoordinatorPosts(){
+    this.subscriber=this.jwtservice.getCoordinatorPost().subscribe(res =>{
+
+      let response:any=res;
+      if(response.success){
+        console.log(response);
+    
+      }
+    
+    },err=>{
+      alert(err.message);
+      console.log(err)
+      console.log(err.status)
+      console.log(err.statusText)
+      console.log(err.message)
+    })
+  }
+
+  getRegionPosts(){
+    this.subscriber=this.jwtservice.getRegionPost().subscribe(res =>{
+
+      let response:any=res;
+      if(response.success){
+        console.log(response);
+    
+      }
+    
+    },err=>{
+      alert(err.message);
+      console.log(err)
+      console.log(err.status)
+      console.log(err.statusText)
+      console.log(err.message)
+    })
+  }
+
   ngOnInit(): void {
 
   }

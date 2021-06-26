@@ -51,6 +51,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     ReactiveFormsModule,
     NgbModule,
     RouterModule
+
   ],
   providers: [JwtService],
   bootstrap: [AppComponent]
