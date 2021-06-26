@@ -16,11 +16,16 @@
     font-size: large;
 }
 
-button:hover {
+#firsttsection:hover {
     font-size: larger;
     font-weight: lighter;
     background-color: white;
-    border: 1px solid #F74F22;
+    border: 1px solid #9e9e9e;
     color: #F74F22;
     transition: 0.7s;
+}
+
+.vl {
+    border-left: 6px solid #F74F22;
+    height: 500px;
 }

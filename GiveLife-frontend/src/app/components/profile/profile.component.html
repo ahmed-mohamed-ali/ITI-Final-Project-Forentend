@@ -1,3 +1,31 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col">
+            <br>
+            <br>
+            <a id="firsttsection" class="btn btn-autosize btn-outline-dark" routerLink="/posts" (click)="PostsClick()">Posts</a>
+            <br>
+            <br>
+            <a id="firsttsection" class="btn btn-autosize btn-outline-dark" routerLink="/cupons" (click)="CuponsClick()">Cupons</a>
+        </div>
+        <div class="col">
+            <div class="vl"></div>
+        </div>
+        <div class="col-9">
+
+        </div>
+    </div>
+</div>
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="openpostform(postform)">Post form</button>
+<br>
+<br>
+<br>
+<button class="btn btn-lg btn-outline-primary" (click)="opencupon(cupon)">generate cupon</button> -->
+
+<!-- forms -->
+
 <!-- <ng-template #content let-modal>
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">
@@ -147,12 +175,3 @@
 
 
 </ng-template>
-
-<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
-    Popup using Angular and Bootstrap
-</button> -->
-<button class="btn btn-lg btn-outline-primary" (click)="openpostform(postform)">Post form</button>
-<br>
-<br>
-<br>
-<button class="btn btn-lg btn-outline-primary" (click)="opencupon(cupon)">generate cupon</button>

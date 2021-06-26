@@ -27,6 +27,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { PostComponent } from './components/post/post.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { PostsComponent } from './components/posts/posts.component';
 
 // auth guard service
 import { AuthGuardService } from './service/auth-guard.service';
@@ -47,7 +48,8 @@ import { AuthGuardService } from './service/auth-guard.service';
     FilterComponent,
     PostFormComponent,
     PostComponent,
-    ProfileComponent
+    ProfileComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,

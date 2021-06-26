@@ -53,4 +53,12 @@ export class ProfileComponent implements OnInit {
   onSubmit(form: NgForm) {
     console.log(form);
   }
+
+  PostsClick= function () {
+    this.router.navigate('/posts');
+  };
+
+  CuponsClick= function () {
+    this.router.navigate('/cupons');
+  };
 }
