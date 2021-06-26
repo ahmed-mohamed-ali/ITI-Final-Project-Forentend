@@ -10,6 +10,7 @@ import { PostComponent } from './components/post/post.component'
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
   { path: 'post', component: PostComponent},

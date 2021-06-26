@@ -16,6 +16,7 @@ export class JwtService {
 
 }
 
+
 getProfile(){
   let headers = new HttpHeaders();
   headers = headers.set('Authorization', localStorage.getItem("access_token"))
@@ -28,8 +29,11 @@ return  this.httpclient.post(`http://localhost:55720/api/RegionCoordinators/Regi
 
 getCupon(){
   let headers = new HttpHeaders();
+ 
   headers = headers.set('Authorization', localStorage.getItem("access_token"))
+
   return  this.httpclient.get(`http://localhost:55720/api/Cupons/getCoordinatorCupon`,{headers:headers});
+  
 }
 getCoordinatorPost(){
   let headers = new HttpHeaders();
@@ -41,6 +45,19 @@ getRegionPost(){
   let headers = new HttpHeaders();
   headers = headers.set('Authorization', localStorage.getItem("access_token"))
   return  this.httpclient.get(`http://localhost:55720/api/Posts/getRegionposts`,{headers:headers});
+}
+donatePost(postId,donnateAmount){
+  let headers = new HttpHeaders();
+  headers = headers.set('Authorization', localStorage.getItem("access_token"))
+  return  this.httpclient.put(`http://localhost:55720/api/Posts/donate/${postId}?donateAmount=${donnateAmount}`,null,{headers:headers});
+}
+
+
+publishPost(post){
+  let headers = new HttpHeaders();
+  headers = headers.set('Authorization', localStorage.getItem("access_token"))
+  return  this.httpclient.post(`http://localhost:55720/api/Posts/coord/publish`,post,{headers:headers});
+  
 }
 
 }

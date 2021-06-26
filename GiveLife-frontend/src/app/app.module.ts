@@ -28,6 +28,12 @@ import { FilterComponent } from './components/filter/filter.component';
 import { PostComponent } from './components/post/post.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
+// auth guard service
+import { AuthGuardService } from './service/auth-guard.service';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,12 +46,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     SignInComponent,
     FilterComponent,
     PostFormComponent,
-<<<<<<< HEAD
-    PostComponent
-=======
     PostComponent,
     ProfileComponent
->>>>>>> c9aac83eda0a84a921cf3fee5dc23d175aeb961b
   ],
   imports: [
     BrowserModule,
@@ -53,12 +55,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-<<<<<<< HEAD
-=======
-    NgbModule,
->>>>>>> c9aac83eda0a84a921cf3fee5dc23d175aeb961b
+   
   ],
-  providers: [JwtService],
+  providers: [JwtService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
