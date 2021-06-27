@@ -16,41 +16,12 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  PostsClick= function () {
+    this.router.navigate('/posts');
+  };
 
-  closeResult = '';
+  CuponsClick= function () {
+    this.router.navigate('/cupons');
+  };
   
-  constructor(private modalService: NgbModal) {}
-  
-  opencupon(cupon) {
-    this.modalService.open(cupon,
-   {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = 
-         `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-  
-  openpostform(postform) {
-    this.modalService.open(postform,
-   {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = 
-         `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
-  }
-  onSubmit(form: NgForm) {
-    console.log(form);
-  }
 }

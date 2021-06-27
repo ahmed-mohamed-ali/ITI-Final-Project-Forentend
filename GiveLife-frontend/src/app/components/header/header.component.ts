@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/service/login.service';
+import { JwtService } from 'src/app/service/jwt.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router,public loginService: LoginService,private JwtService:JwtService) { }
 
   ngOnInit(): void {
   }
 
+  SignInClick= function () {
+    this.router.navigate('/signin');
+};
+
+LogoutClick= function () {
+  this.JwtService.logout()
+  this.router.navigate('/home');
+};
+
+SignUpClick= function () {
+  this.router.navigate('/signup');
+};
+
+isLogin(){
+  return this.JwtService.loggedIn
+}
 }

@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
 import { FormBuilder } from "@angular/forms";
 
 import { UserService } from '../../shared/user.service'
+import { JwtService } from 'src/app/service/jwt.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -16,13 +17,38 @@ import { UserService } from '../../shared/user.service'
 })
 export class SignInComponent implements OnInit {
 
-  constructor(public userService: UserService, private router: Router) { }
+  subscriber:any
+  notexist:boolean;
+  constructor(public userService: UserService,public jwtservice:JwtService,private router: Router) {
+    this.notexist=false
+   }
 
   ngOnInit(): void {
+    
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    this.notexist=false
+    console.log(form.value);
+    this.subscriber=this.jwtservice.login(form.value).subscribe(res =>{
+
+      let response:any=res;
+      console.log(response);
+      if(response.success){
+    
+        localStorage.setItem('access_token', `Bearer ${response.token}`);
+      }
+    
+    },err=>{
+      if(err.status=404){
+        this.notexist=true;
+      }
+      console.log(err)
+      console.log(err.status)
+      console.log(err.statusText)
+      console.log(err.message)
+    })
   }
+  
 
 }

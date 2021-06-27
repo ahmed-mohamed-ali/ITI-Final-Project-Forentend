@@ -9,7 +9,7 @@
 
         </li>
     </ul>
-    <ul class="nav justify-content-center">
+    <!-- <ul class="nav justify-content-center">
         <li class="nav-item">
             <a class="nav-link active text-dark mb-0 h6" href="Home">Home</a>
         </li>
@@ -20,16 +20,23 @@
         <li class="nav-item">
             <a class="nav-link active text-dark mb-0 h6" href="Blog">Blog</a>
         </li>
-    </ul>
+    </ul> -->
     <ul class="nav justify-content-end">
 
-        <li class="nav-item">
-            <button type="button" class="btn btn-outline-danger"><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-512.png" width="20" height="20"></button>
+        <li class="nav-item dropdown">
+            <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> <button type="button" class="btn btn-outline-danger"><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-512.png" width="20" height="20"></button> </a>
+            <ul class="dropdown-menu">
+                <li *ngIf="!isLogin()"><a class="dropdown-item" href="signin" routerLink="/signin" (click)="SignInClick();">Sign In</a></li>
+                <li *ngIf="!isLogin()"><a class="dropdown-item" href="signup" routerLink="/signup" (click)="SignUpClick();">Sign Up</a></li>
+                <!-- <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li> -->
+                <li *ngIf="isLogin()"><a class="dropdown-item" href="logout" routerLink="/home" (click)="LogoutClick();">Logout</a></li>
+
+            </ul>
 
         </li>
 
         <li class="nav-item">
-            <button type="button" id="tomakespace" class="btn btn-outline-danger">DONATE NOW <i>♥</i> </button>
+            <button type="button" id="tomakespace" style="margin-top: 0.41rem;" class="btn btn-outline-danger">DONATE NOW <i>♥</i> </button>
         </li>
 
     </ul>

@@ -36,6 +36,10 @@ this.subscriber=this.jwtservice.login(this.user).subscribe(res =>{
  
   }
 
+  logOut() {
+    localStorage.removeItem('access_token');
+ }
+
   getProfile(){
     this.subscriber=this.jwtservice.getProfile().subscribe(res =>{
 
@@ -47,6 +51,87 @@ this.subscriber=this.jwtservice.login(this.user).subscribe(res =>{
     
     },err=>{
       console.log(err)
+      console.log(err.status)
+      console.log(err.statusText)
+      console.log(err.message)
+    })
+  }
+
+  getCoordinatorPosts(){
+    this.subscriber=this.jwtservice.getCoordinatorPost().subscribe(res =>{
+
+      let response:any=res;
+      if(response.success){
+        console.log(response);
+    
+      }
+    
+    },err=>{
+      alert(err.message);
+      console.log(err)
+      console.log(err.status)
+      console.log(err.statusText)
+      console.log(err.message)
+    })
+  }
+
+  getRegionPosts(){
+    this.subscriber=this.jwtservice.getRegionPost().subscribe(res =>{
+
+      let response:any=res;
+      if(response.success){
+        console.log(response);
+    
+      }
+    
+    },err=>{
+      alert(err.message);
+      console.log(err)
+      console.log(err.status)
+      console.log(err.statusText)
+      console.log(err.message)
+    })
+  }
+
+postID=1
+donnateAmount=580
+ donnatePosts(){
+    this.subscriber=this.jwtservice.donatePost(this.postID,this.donnateAmount).subscribe(res =>{
+
+      let response:any=res;
+      if(response.success){
+        console.log(response);
+    
+      }
+    
+    },err=>{
+      alert(err.error);
+      console.log(err.error)
+      console.log(err.status)
+      console.log(err.statusText)
+      console.log(err.message)
+    })
+  }
+
+  post={
+    PostMessage:"post from front end",
+    RequiredAmount:"1000",
+    NeedCatogry:"food",
+    CaseNationalId:1
+  }
+
+publishPosts(){
+    this.subscriber=this.jwtservice.publishPost(this.post).subscribe(res =>{
+
+      let response:any=res;
+      if(response.success){
+        console.log(response);
+    
+      }
+    
+    },err=>{
+      alert(err.error);
+      console.log(err.error)
       console.log(err.status)
       console.log(err.statusText)
       console.log(err.message)
