@@ -65,6 +65,7 @@ getCoordinatorPost(){
 getRegionPost(){
   let headers = new HttpHeaders();
   headers = headers.set('Authorization', localStorage.getItem("access_token"))
+  
   return  this.httpclient.get(`http://localhost:55720/api/Posts/getRegionposts`,{headers:headers});
 }
 donatePost(postId,donnateAmount){
