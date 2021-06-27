@@ -19,15 +19,18 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 
 //Needer component
 import { CuponComponent } from './components/cupon/cupon.component';
+import { CuponsComponent } from './components/cupons/cupons.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
+import { PostComponent } from './components/post/post.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 //profile component
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { FilterComponent } from './components/filter/filter.component';
-import { PostComponent } from './components/post/post.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { PostsComponent } from './components/posts/posts.component';
+
 
 // auth guard service
 import { AuthGuardService } from './service/auth-guard.service';
@@ -49,7 +52,8 @@ import { AuthGuardService } from './service/auth-guard.service';
     PostFormComponent,
     PostComponent,
     ProfileComponent,
-    PostsComponent
+    PostsComponent,
+    CuponsComponent
   ],
   imports: [
     BrowserModule,
