@@ -74,17 +74,10 @@ import { AuthGuardService } from './service/auth-guard.service';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-<<<<<<< HEAD
-
-  ],
-  providers: [JwtService],
-  bootstrap: [AppComponent],
-=======
     RouterModule
 
   ],
   providers: [JwtService,AuthGuardService],
   bootstrap: [AppComponent]
->>>>>>> 00b2213b3147b040d6efd56aa3c78e80920aa7bb
 })
 export class AppModule { }

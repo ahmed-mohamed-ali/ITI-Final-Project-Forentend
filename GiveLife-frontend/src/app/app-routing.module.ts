@@ -6,7 +6,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { CuponComponent } from './components/cupon/cupon.component';
 import { CuponsComponent } from './components/cupons/cupons.component';
-
+import {TestComponent} from './test/test.component';
 
 import { PostComponent } from './components/post/post.component';
 import { PostsComponent } from './components/posts/posts.component';
@@ -27,6 +27,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'posts', component: PostsComponent},
   {path: 'cupons', component: CuponsComponent},
+  {path:'test',component:TestComponent}
 
 ];
 
