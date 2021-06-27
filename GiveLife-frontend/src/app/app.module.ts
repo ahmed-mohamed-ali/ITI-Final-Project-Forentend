@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import{TestComponent} from "./test/test.component"
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Authentication component
 import { JwtService } from './service/jwt.service';
@@ -30,13 +30,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { FilterComponent } from './components/filter/filter.component';
-
-
-// auth guard service
-import { AuthGuardService } from './service/auth-guard.service';
-
-
-
+import { PostComponent } from './components/post/post.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { DonateComponent } from './components/donate/donate.component';
+//import { DonateComponent } from './components/donate/donate.component';
 
 @NgModule({
   declarations: [
@@ -57,9 +54,10 @@ import { AuthGuardService } from './service/auth-guard.service';
     FilterComponent,
     PostFormComponent,
     PostComponent,
+    //DonateComponent,
+
     ProfileComponent,
-    PostsComponent,
-    CuponsComponent
+    DonateComponent
   ],
   imports: [
     BrowserModule,
@@ -73,8 +71,7 @@ import { AuthGuardService } from './service/auth-guard.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule,
-    RouterModule
+    NgModule,
 
   ],
   providers: [JwtService,AuthGuardService],
