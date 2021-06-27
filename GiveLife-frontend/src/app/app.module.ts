@@ -21,9 +21,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { CuponComponent } from './components/cupon/cupon.component';
 import { CuponsComponent } from './components/cupons/cupons.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
-import { PostComponent } from './components/post/post.component';
+import {AuthGuardService} from './service/auth-guard.service'
 import { PostsComponent } from './components/posts/posts.component';
-import { ProfileComponent } from './components/profile/profile.component';
+
 
 
 //profile component

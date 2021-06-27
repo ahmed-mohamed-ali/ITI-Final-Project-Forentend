@@ -9,7 +9,7 @@ import { JwtService } from 'src/app/service/jwt.service';
 
 export class PostComponent implements OnInit {
   subscriber
-  postsArray : any
+  
   constructor(public jwtservice:JwtService) { }
 
   ngOnInit(): void {
