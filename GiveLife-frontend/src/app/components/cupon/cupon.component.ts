@@ -8,6 +8,11 @@ import { JwtService } from 'src/app/service/jwt.service';
 })
 export class CuponComponent implements OnInit {
 
+//  ngOnInit(): void {
+   
+//       }
+//       constructor() { }
+  //ahmed
   cupons:[]
   constructor(public jwtservice:JwtService) { }
 
