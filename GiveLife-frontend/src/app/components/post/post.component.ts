@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { JwtService } from '../../service/jwt.service';
+import { JwtService } from 'src/app/service/jwt.service';
+
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -7,9 +8,8 @@ import { JwtService } from '../../service/jwt.service';
 })
 
 export class PostComponent implements OnInit {
-
- regionPosts:any;
   subscriber
+  postsArray : any
   constructor(public jwtservice:JwtService) { }
 
   ngOnInit(): void {
@@ -17,18 +17,28 @@ export class PostComponent implements OnInit {
 
       let response:any=res;
       if(response.success){
-        console.log(response);
-        this.regionPosts = response.post;
-        console.log(this.regionPosts);
+        this.postsArray=response.post;
+        console.log(response.post);
+    
       }
     
     },err=>{
       alert(err.message);
-      console.log(err)
-      console.log(err.status)
-      console.log(err.statusText)
-      console.log(err.message)
+      // console.log(err)
+      // console.log(err.status)
+      // console.log(err.statusText)
+      // console.log(err.message)
     })
   }
 
+  // postsArray : any = [
+  //   {
+  //     postId : 0 ,
+  //     postTxt : "post 1",
+  //     requiredAmount : 1000,
+  //     needCatogry : "money",
+  //     restAmount : 12000
+  //   },
+  // ]
 }
+

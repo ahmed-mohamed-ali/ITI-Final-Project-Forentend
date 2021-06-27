@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="sidenav">
    <button>Goods</button>
 
@@ -5,18 +6,61 @@
    
   </div>
 <div class="container divkbera main">
+=======
+<!-- <div class="container divkbera">
+>>>>>>> 2b3e2f20c39582a3bb2023f41a2268ea164a2caf
     <div class="row">
         <div class="col-md">
-            <div class="parent">
+            <div class="parent" *ngFor="let item of postsArray">
                 <div class="div1">
-                    <textarea class="ele1 form-control" type="text" name="comment" form="usrform"
+                    <p class="ele1 form-control textarea">{{item.postTxt}}</p>
+                     <textarea class="ele1 form-control" type="text" name="comment" form="usrform"
                         rows="5" required>
-                    </textarea>
+                    </textarea> -->
+<!-- </div>
+                <div class="div2">
+                    <p class="p">Required Amount..</p>
+                    <p class="form-control input">{{item.requiredAmount}}</p>
                 </div>
-                <div class="div2"><input class="form-control" placeholder="Required Amount.."></div>
-                <div class="div3"> <input class="form-control" placeholder="NeedCategory.."></div>
-                <div class="div4"> <input class="form-control" placeholder="Rest Amount.."></div>
+                <div class="div3">
+                    <p class="p">Need Category..</p>
+                    <p class="form-control input" *ngIf="item.needCatogry==0">Food</p>
+                    <p class="form-control input" *ngIf="item.needCatogry==1">Medicine</p>
+                    <p class="form-control input" *ngIf="item.needCatogry==2">Money</p>
+                    <p class="form-control input" *ngIf="item.needCatogry==3">Cloths</p>
+
+                </div>
+                <div class="div4">
+                    <p class="p">Rest Amount..</p>
+                    <p class="form-control input">{{item.restAmount}}</p>
+                </div>
                 <div class="div5"><button type="submit"> Donate <i>♥</i> </button></div>
+            </div>
+        </div>
+    </div>
+</div>  -->
+
+<div class="container mx-auto">
+    <div class="row">
+        <div class="col">
+            <div class="card " style="width: 14rem;">
+                <form class="card-details ">
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="parent">
+                                <div class="div1">
+                                    <textarea class="ele1 form-control" type="text" name="comment" form="usrform" rows="5" required>
+                                    </textarea>
+                                </div>
+
+                                <div class="div2"><input class="form-control" placeholder="Required Amount.."></div>
+                                <div class="div3"> <input class="form-control" placeholder="NeedCategory.."></div>
+                                <div class="div4"> <input class="form-control" placeholder="Rest Amount.."></div>
+                                <div class="div5"><button type="submit"> Donate <i>♥</i> </button></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

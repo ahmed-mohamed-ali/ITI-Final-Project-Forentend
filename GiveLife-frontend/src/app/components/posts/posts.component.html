@@ -1,8 +1,20 @@
-<button class="btn btn-lg btn-outline-primary" (click)="openpostform(postform)">Post form</button>
+<app-header></app-header>
+<button class="btn btn-outline-danger" style="margin:3rem; display:flex; " (click)="openpostform(postform)">Publish Post</button>
 <br>
 <br>
 <br>
-<button class="btn btn-lg btn-outline-primary" (click)="opencupon(cupon)">generate cupon</button>
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="opencupon(cupon)">generate cupon</button> -->
+
+<app-post></app-post>
+
+
+
+
+
+
+
+
+
 
 <ng-template #cupon let-modal>
     <div class="modal-header">
@@ -70,7 +82,7 @@
     <div class="modal-body">
         <form name="postform" #postform="ngForm" (ngSubmit)="onSubmit(postform)">
             <!-- /////////////////////////////////// -->
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <p class="text-warning mb-0">Post Text</p>
                 <textarea class="form-control formElement" type="text" name="posttext" form="usrform" placeholder="Enter text here..." required></textarea>
                 <div class="msg" *ngIf="posttext.touched && posttext.errors">
@@ -106,6 +118,24 @@
                         <button type="submit" class="btn btn-outline-dark" class="div5" (click)="modal.close('Save click')" [disabled]="postform.invalid==true">
                             Publish
                         </button>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-md">
+                    <div class="parent">
+                        <div class="div1">
+                            <textarea class="ele1 form-control" type="text" name="comment" form="usrform" rows="5" required>
+                            </textarea>
+                        </div>
+                        <br>
+                        <div class="div2"><input class="form-control" placeholder="Required Amount.."></div>
+                        <br>
+                        <div class="div3"> <input class="form-control" placeholder="NeedCategory.."></div>
+                        <br>
+                        <div class="div4"> <input class="form-control" placeholder="Rest Amount.."></div>
+                        <br>
+                        <button class="div5 " type=" submit ">Publish <i>♥</i> </button>
                     </div>
                 </div>
             </div>
