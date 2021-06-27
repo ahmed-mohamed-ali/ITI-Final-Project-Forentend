@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/service/login.service';
 import { JwtService } from 'src/app/service/jwt.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { JwtService } from 'src/app/service/jwt.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private route:Router,public loginService: LoginService,private JwtService:JwtService) { }
+  constructor(private route:Router,private JwtService:JwtService) { }
 
   ngOnInit(): void {
   }
