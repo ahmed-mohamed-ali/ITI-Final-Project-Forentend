@@ -9,18 +9,7 @@
 
         </li>
     </ul>
-    <!-- <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active text-dark mb-0 h6" href="Home">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active text-dark mb-0 h6" href="Posts">Posts</a>
-        </li>
 
-        <li class="nav-item">
-            <a class="nav-link active text-dark mb-0 h6" href="Blog">Blog</a>
-        </li>
-    </ul> -->
     <ul class="nav justify-content-end">
 
         <li class="nav-item dropdown">
@@ -28,23 +17,42 @@
             <ul class="dropdown-menu">
                 <li *ngIf="!isLogin()"><a class="dropdown-item" href="signin" routerLink="/signin" (click)="SignInClick();">Sign In</a></li>
                 <li *ngIf="!isLogin()"><a class="dropdown-item" href="signup" routerLink="/signup" (click)="SignUpClick();">Sign Up</a></li>
-                <!-- <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li> -->
-                <li *ngIf="isLogin()"><a class="dropdown-item" href="logout" routerLink="/home" (click)="LogoutClick();">Logout</a></li>
 
             </ul>
 
         </li>
 
         <li class="nav-item">
-            <button type="button" id="tomakespace" style="margin-top: 0.41rem;" class="btn btn-outline-danger">DONATE NOW <i>♥</i> </button>
+            <button type="button" id="tomakespace" style="margin-top: 0.41rem;" (click)="opendonateform(donateform)" class="btn btn-outline-danger">DONATE NOW <i>♥</i> </button>
         </li>
 
     </ul>
 </nav>
 
-
-
-<!-- svg for heart icon  -->
-<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-  </svg> -->
+<ng-template #donateform let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">
+            Step of Help
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+  
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form name="donateform" #donateform="ngForm" (ngSubmit)="onSubmit(donateform)">
+            <div class="row">
+                <div class="col-md">
+                    <div class="parent">
+                        <br>
+                        <div class="div2"><input class="form-control" placeholder="Donated Amount.."></div>
+                        <br>
+                        <button class="div5 " type=" submit ">Donate <i>♥</i> </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>

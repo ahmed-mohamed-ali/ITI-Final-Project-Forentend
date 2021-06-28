@@ -40,10 +40,12 @@ import { DonateComponent } from './components/donate/donate.component';
     AppComponent,
 
 
-    TestComponent,
 
 
     TestComponent,
+
+
+    
 
     HeaderComponent,
     FooterComponent,
@@ -57,7 +59,9 @@ import { DonateComponent } from './components/donate/donate.component';
     //DonateComponent,
 
     ProfileComponent,
-    DonateComponent
+    PostsComponent,
+    CuponsComponent,
+    DonateComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,3 +82,4 @@ import { DonateComponent } from './components/donate/donate.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// 

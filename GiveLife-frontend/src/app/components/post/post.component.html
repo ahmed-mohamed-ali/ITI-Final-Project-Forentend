@@ -1,21 +1,96 @@
-<!-- <div class="container divkbera">
-    <div class="row">
-        <div class="col-md">
-            <div class="parent">
-                <div class="div1" *ngFor="let item of postsArray">
-                    <p class="ele1 form-control textarea">{{item.postTxt}}</p>
-                    <textarea class="ele1 form-control" type="text" name="comment" form="usrform"
-                        rows="5" required>
-                    </textarea> -->
-                </div>
-                <div class="div2" *ngFor="let item of postsArray"><p class="p">Required Amount..</p><p class="form-control input">{{item.requiredAmount}}</p></div>
-                <div class="div3" *ngFor="let item of postsArray"><p class="p">Need Category..</p><p class="form-control input">{{item.needCatogry}}</p></div>
-                <div class="div4" *ngFor="let item of postsArray"><p class="p">Rest Amount..</p><p class="form-control input">{{item.restAmount}}</p></div>
-                <div class="div5"><button type="submit" (click)="reg()"> Donate <i>♥</i> </button></div>
-                <!--input type="button" class="btn btn-dark" value="Register" (click)="reg()"-->
-            </div>
-        </div>
-    </div>
+<div *ngFor="let item of ['pharmacy','medicine'];  let i = index">
+    <input type="checkbox" value="{{item}}" [checked]="selected1 === i" (change)="selected1 = i" (change)=" onChangeCat($event)">{{item}}
 </div>
 
+<div *ngFor="let item of [500,2000,3000];  let i = index">
+    <input type="checkbox" value="{{item}}" [checked]="selected === i" (change)="selected = i" (change)=" onChange($event)">{{item}}
+</div>
 
+<div class="container mx-auto" *ngFor="let item of postsArray">
+
+    <div class="container mx-auto">
+
+        <div class="card " style="width: 24rem; height:19rem;">
+            <form class="card-details ">
+                <div class="form-group">
+
+                    <div class="row">
+                        <div id="d23" class="col">
+                            <p>{{item.postTxt}}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div id="d11" class="col">
+                            <p class="need ">Need Category</p>
+
+                        </div>
+                        <div id="d13" class="col">
+                            <p class="need">Required Amount</p>
+
+                        </div>
+                        <div id="d12" class="col">
+                            <p class="need">Rest Amount</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div id="d11" class="col">
+
+                            <p class="text-dark " *ngIf="item.needCatogry==0">Food</p>
+                            <p class="text-dark " *ngIf="item.needCatogry==1">Medicine</p>
+                            <p class="text-dark " *ngIf="item.needCatogry==2">Money</p>
+                            <p class="text-dark " *ngIf="item.needCatogry==3">Cloths</p>
+
+                        </div>
+                        <div id="d13" class="col">
+                            <p class="text-dark  ">{{item.requiredAmount}}</p>
+
+                        </div>
+                        <div id="d12" class="col">
+                            <p class="text-dark  ">{{item.restAmount}}</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="div5"><button type="submit" (click)="opendonateform(donateform,item.postId)"> Donate <i>♥</i> </button></div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <ng-template #donateform let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">
+                Step of Help
+            </h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      
+                <span aria-hidden="true">
+                    ×
+                </span>
+            </button>
+        </div>
+
+
+        <!-- model -->
+        <div class="modal-body">
+            <form name="donateform" #donateform="ngForm" (ngSubmit)="donateToPost(Amount.value)">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="parent">
+                            <br>
+                            <div class="div2"><input class="form-control" #Amount placeholder="Donated Amount.."></div>
+                            <br>
+                            <button class="div5 " type=" submit " (click)="modal.dismiss('Cross click')">Donate <i>♥</i> </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </ng-template>

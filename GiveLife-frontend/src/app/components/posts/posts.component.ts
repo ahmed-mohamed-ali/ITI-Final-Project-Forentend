@@ -6,6 +6,7 @@ import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
 
 import { Router } from "@angular/router";
 import { FormBuilder } from "@angular/forms"; 
+import { JwtService } from 'src/app/service/jwt.service';
 
 @Component({
   selector: 'app-posts',
@@ -14,13 +15,19 @@ import { FormBuilder } from "@angular/forms";
 })
 export class PostsComponent implements OnInit {
 
-
+  subscriber
+  post={
+    PostMessage:"",
+    RequiredAmount:"",
+    NeedCatogry:"",
+    CaseNationalId:""
+  }
 
   ngOnInit(): void {
   }
   closeResult = '';
   
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, public jwtservice:JwtService) {}
   
   opencupon(cupon) {
     this.modalService.open(cupon,
@@ -53,6 +60,25 @@ export class PostsComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
     console.log(form);
+    console.log(this.post);
+
+    this.subscriber=this.jwtservice.publishPost(this.post).subscribe(res =>{
+
+      let response:any=res;
+      if(response.success){
+        console.log(response);
+        window.location.reload();
+        
+      }
+    
+    },err=>{
+      alert(err.error);
+      console.log(err.error)
+      console.log(err.status)
+      console.log(err.statusText)
+      console.log(err.message)
+    })
+    
   }
 
  
