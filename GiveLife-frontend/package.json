@@ -25,6 +25,8 @@
     "autoprefixer": "^10.2.6",
     "bootstrap": "^5.0.1",
     "jquery": "^3.6.0",
+    "ngx-bootstrap": "^6.2.0",
+    "ngx-bootstrap-modal": "^2.0.1",
     "popper.js": "^1.16.1",
     "postcss": "^8.3.5",
     "rxjs": "~6.6.0",
