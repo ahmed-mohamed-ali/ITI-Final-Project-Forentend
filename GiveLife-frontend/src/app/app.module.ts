@@ -34,6 +34,7 @@ import { FilterComponent } from './components/filter/filter.component';
 
 // auth guard service
 import { AuthGuardService } from './service/auth-guard.service';
+import { DonateComponent } from './components/donate/donate.component';
 
 
 
@@ -53,7 +54,8 @@ import { AuthGuardService } from './service/auth-guard.service';
     PostComponent,
     ProfileComponent,
     PostsComponent,
-    CuponsComponent
+    CuponsComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,

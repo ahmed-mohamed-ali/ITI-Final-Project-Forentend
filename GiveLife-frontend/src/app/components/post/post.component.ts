@@ -1,8 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+//import { Component, OnInit } from '@angular/core';
 import { JwtService } from 'src/app/service/jwt.service';
+<<<<<<< HEAD
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
 
+=======
+import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { DonateComponent } from 'src/app/components/donate/donate.component';
+>>>>>>> bc847458abd6fd9d38b5cb692da83cad6f4d95c5
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -11,6 +17,7 @@ import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
 export class PostComponent implements OnInit {
   subscriber
   postsArray : any
+<<<<<<< HEAD
   closeResult = '';
   PostId:any
   Moneyamount:any=0;
@@ -22,6 +29,24 @@ export class PostComponent implements OnInit {
   donateToPost(amount){
     console.log(this.PostId,amount);
     this.subscriber=this.jwtservice.donatePost(this.PostId,amount).subscribe(res =>{
+=======
+ // bsModalRef: BsModalRef
+ // private modalService: BsModalService
+  //private changeDetection: ChangeDetectorRef
+  constructor(public jwtservice:JwtService) { }
+
+ /* reg(){
+    let bsModalRef = this.modalService.show(DonateComponent);
+    
+  }*/
+ 
+  donateToPost(postId,amountg){
+    
+  
+
+    this.subscriber=this.jwtservice.donatePost(postId,amountg).subscribe(res =>{
+
+>>>>>>> bc847458abd6fd9d38b5cb692da83cad6f4d95c5
 
       let response:any=res;
       if(response.success){
@@ -30,8 +55,13 @@ export class PostComponent implements OnInit {
       }
     
     },err=>{
+
+      alert(err.message);
+      console.log(err)
+
       alert(err.error);
       console.log(err.error)
+
       console.log(err.status)
       console.log(err.statusText)
       console.log(err.message)
@@ -173,4 +203,6 @@ onChangeCat(event: any){
 
   
 }
+
+
 

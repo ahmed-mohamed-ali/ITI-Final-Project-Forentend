@@ -1,0 +1,30 @@
+<!--p>donate works!</p-->
+
+<!-- <input type="button" value="Close" (click)="close()"> -->
+
+<div class="modal-header" >
+    <h1 class="pull-left">Donate</h1>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="myForm">
+     
+      <div class="form-group">
+        <input type="number" name="money" formControlName="money" placeholder="Donate Money" class="form-control"#amount>
+        <div *ngIf="myForm.controls.money.errors" class="text-danger">
+         it is not valid
+          <span *ngIf="myForm.controls.age.errors.required">donate money is required</span>
+          
+        </div>
+      </div>
+      <div class="form-group text-center" *ngFor="let posts of postsArray">
+        <input type="button" (click)="donateToPost(posts.postId,amountg)" class="btn btn-dark">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">cancel</button>
+  </div>
+
