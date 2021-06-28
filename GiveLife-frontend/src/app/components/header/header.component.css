@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&family=Roboto+Slab&display=swap');
 nav {
     padding: 7px;
 }
 
 #tomakespace {
     margin-left: 7px;
+}
+
+.div5 {
+    grid-area: 3 / 3 / 4 / 4;
+    margin-top: 0px;
+    padding: 10px;
+    border: 1px #F74F22 solid;
+    border-radius: 30px;
+    outline: none;
+    width: 100%;
+    height: 45%;
+    border: 1px;
+    border-radius: 30px;
+    background-color: #F74F22;
+    font-weight: normal;
+    color: white;
+    font-size: large;
 }

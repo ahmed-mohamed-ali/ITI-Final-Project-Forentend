@@ -44,5 +44,9 @@ export class ProfileComponent implements OnInit {
   CuponsClick= function () {
     this.router.navigate('/cupons');
   };
+
+  LogoutClick= function () {
+    this.router.navigate('/home');
+  };
   
 }

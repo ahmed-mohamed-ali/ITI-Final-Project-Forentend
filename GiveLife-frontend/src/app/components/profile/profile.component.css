@@ -141,3 +141,10 @@ h6 {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out
 }
+
+app-post {
+    display: inline-block;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

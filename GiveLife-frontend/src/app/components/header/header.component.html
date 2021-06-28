@@ -29,20 +29,46 @@
                 <li *ngIf="!isLogin()"><a class="dropdown-item" href="signin" routerLink="/signin" (click)="SignInClick();">Sign In</a></li>
                 <li *ngIf="!isLogin()"><a class="dropdown-item" href="signup" routerLink="/signup" (click)="SignUpClick();">Sign Up</a></li>
                 <!-- <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li> -->
-                <li *ngIf="isLogin()"><a class="dropdown-item" href="logout" routerLink="/home" (click)="LogoutClick();">Logout</a></li>
+                <!-- <li *ngIf="isLogin()"><a class="dropdown-item" href="logout" routerLink="/home" (click)="LogoutClick();">Logout</a></li> -->
 
             </ul>
 
         </li>
 
         <li class="nav-item">
-            <button type="button" id="tomakespace" style="margin-top: 0.41rem;" class="btn btn-outline-danger">DONATE NOW <i>♥</i> </button>
+            <button type="button" id="tomakespace" style="margin-top: 0.41rem;" (click)="opendonateform(donateform)" class="btn btn-outline-danger">DONATE NOW <i>♥</i> </button>
         </li>
 
     </ul>
 </nav>
 
-
+<ng-template #donateform let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">
+            Step of Help
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+  
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form name="donateform" #donateform="ngForm" (ngSubmit)="onSubmit(donateform)">
+            <div class="row">
+                <div class="col-md">
+                    <div class="parent">
+                        <br>
+                        <div class="div2"><input class="form-control" placeholder="Donated Amount.."></div>
+                        <br>
+                        <button class="div5 " type=" submit ">Donate <i>♥</i> </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
 
 <!-- svg for heart icon  -->
 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
