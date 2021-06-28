@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&family=Roboto+Slab&display=swap');
-* {
+
+/* //salmaaaa */
+
+
+/* * {
     box-sizing: border-box;
     font-family: 'Mitr', sans-serif;
 }
@@ -47,14 +51,15 @@
     grid-area: 3 / 3 / 4 / 4;
     margin-top: 0px;
     padding: 10px;
-}
+} */
 
-input,
+
+/* input,
 textarea {
     border: 1px #F74F22 solid;
     border-radius: 30px;
     outline: none;
-}
+} */
 
 button {
     width: 100%;
@@ -78,7 +83,7 @@ button:hover {
 }
 
 body {
-    background: linear-gradient(to right, rgba(235, 224, 232, 1) 52%, rgba(254, 191, 1, 1) 53%, rgba(254, 191, 1, 1) 100%);
+    /* background: linear-gradient(to right, rgba(235, 224, 232, 1) 52%, rgba(254, 191, 1, 1) 53%, rgba(254, 191, 1, 1) 100%); */
     font-family: 'Roboto', sans-serif
 }
 
@@ -90,5 +95,26 @@ body {
     border-radius: 15px;
     margin: 50px 0 50px;
     padding: 15px;
-    padding-bottom: 20px !important
+    padding-bottom: 10px !important
 }
+
+.need {
+    color: #F74F22;
+}
+
+
+/* #d11 {
+    background-color: red;
+}
+
+#d12 {
+    background-color: bllue;
+}
+
+#d13 {
+    background-color: yellow;
+}
+
+#d23 {
+    background-color: green;
+} */

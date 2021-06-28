@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtService } from 'src/app/service/jwt.service';
+import { HttpHeaders } from '@angular/common/http';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-header',
@@ -9,10 +12,11 @@ import { JwtService } from 'src/app/service/jwt.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private route:Router,private JwtService:JwtService) { }
+  constructor(private route:Router,private JwtService:JwtService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
+
 
   SignInClick= function () {
     this.router.navigate('/signin');
@@ -30,4 +34,30 @@ SignUpClick= function () {
 isLogin(){
   return this.JwtService.loggedIn
 }
+
+closeResult = '';
+
+opendonateform(donateform) {
+  this.modalService.open(donateform,
+ {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    this.closeResult = `Closed with: ${result}`;
+  }, (reason) => {
+    this.closeResult = 
+       `Dismissed ${this.getDismissReason(reason)}`;
+  });
+}
+
+private getDismissReason(reason: any): string {
+  if (reason === ModalDismissReasons.ESC) {
+    return 'by pressing ESC';
+  } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+    return 'by clicking on a backdrop';
+  } else {
+    return `with: ${reason}`;
+  }
+}
+onSubmit(form: NgForm) {
+  console.log(form);
+}
+
 }

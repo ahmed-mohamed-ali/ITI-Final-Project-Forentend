@@ -15,6 +15,7 @@ export class PostComponent implements OnInit {
  // private modalService: BsModalService
   //private changeDetection: ChangeDetectorRef
   constructor(public jwtservice:JwtService) { }
+
  /* reg(){
     let bsModalRef = this.modalService.show(DonateComponent);
     
@@ -24,6 +25,11 @@ export class PostComponent implements OnInit {
     
     this.subscriber=this.jwtservice.donatePost(postId,amountg).subscribe(res =>{
   
+
+  donateToPost(postID,amountg){
+    this.subscriber=this.jwtservice.donatePost(postID,amountg).subscribe(res =>{
+
+
       let response:any=res;
       if(response.success){
         console.log(response);
@@ -31,8 +37,13 @@ export class PostComponent implements OnInit {
       }
     
     },err=>{
+
       alert(err.message);
       console.log(err)
+
+      alert(err.error);
+      console.log(err.error)
+
       console.log(err.status)
       console.log(err.statusText)
       console.log(err.message)
