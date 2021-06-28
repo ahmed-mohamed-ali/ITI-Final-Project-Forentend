@@ -2,81 +2,10 @@
 <br>
 <br>
 <br>
-<!-- <button class="btn btn-lg btn-outline-primary" (click)="opencupon(cupon)">generate cupon</button> -->
 
 <app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
 
-
-
-
-
-
-
-
-
-
-
-<ng-template #cupon let-modal>
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">
-            Cupon
-        </h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-  
-            <span aria-hidden="true">
-                ×
-            </span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <form>
-            <div class="form-group">
-                <p class="text-warning mb-0">Cupon Identity</p>
-                <p type="text" name="name" placeholder="Identity" value="6868786868668">4576</p>
-
-                <p class="text-warning mb-0">NationalID</p>
-                <p type="text" name="name" placeholder="Id" value="68644448668">29712100455700</p>
-
-
-                <div class="row d-flex">
-                    <div class="col-sm-8">
-                        <p class="text-warning mb-0">Case Name</p>
-                        <p type="text" name="exp" placeholder="Person Name" size="20" id="exp" minlength="20" maxlength="20" value="samira elsayed">samira elsayed</p>
-                    </div>
-                    <div class="col-sm-8">
-                        <p class="text-warning mb-0">Amount of Money</p>
-                        <p type="Money" name="exp" placeholder="EGP" size="20" id="exp" value="600.00">600.00</p>
-                    </div>
-                    <div class="col-sm-8">
-                        <p class="text-warning mb-0">Expiration</p>
-                        <p type="date" name="cvv" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="20" maxlength="20" alue="10/12/2022">10/12/2022</p>
-                    </div>
-
-                </div>
-
-            </div>
-        </form>
-    </div>
-    <div class="modal-footer">
-        <div class="form-group">
-            <button type="button" class="btn btn-outline-dark div5" (click)="modal.close('Save click')">
-            OK
-        </button>
-        </div>
-    </div>
-</ng-template>
-
-
-<ng-template #postform let-modal>
+<ng-template #postform let-modal class="manyofcards">
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">
             Write a Post
@@ -90,73 +19,47 @@
     </div>
     <div class="modal-body">
         <form name="postform" #postform="ngForm" (ngSubmit)="onSubmit(postform)">
-            <!-- /////////////////////////////////// -->
-            <!-- <div class="form-group">
-                <p class="text-warning mb-0">Post Text</p>
-                <textarea class="form-control formElement" type="text" name="posttext" form="usrform" placeholder="Enter text here..." required></textarea>
-                <div class="msg" *ngIf="posttext.touched && posttext.errors">
-                    <span *ngIf="posttext.errors.required">post text is required.... </span>
 
-                </div>
-            </div>
-            <div class="form-group">
-                <p class="text-warning mb-0">NationalID</p>
-                <input class="form-control" type="text" name="name" form="usrform" length="14" placeholder="Id" value="" required>
-            </div>
-            <div class="row d-flex">
-                <div class="col-sm-8">
-                    <div class="form-group">
-                        <p class="text-warning mb-0">Need Category</p>
-                        <select class="form-control" id="pet-select" form="usrform" required>
-                           
-                            <option value="food">Food</option>
-                                    <option value="medicine">Medicine</option>
-                                    <option value="clothes">Clothes</option>
-                                    <option value="money">Money</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="form-group">
-                        <p class="text-warning mb-0"> Required Amount</p>
-                        <input class="form-control" type="Money" name="exp" placeholder="0.00" form="usrform" size="20" id="exp" value="" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-outline-dark" class="div5" (click)="modal.close('Save click')" [disabled]="postform.invalid==true">
-                            Publish
-                        </button>
-                    </div>
-                </div>
-            </div> -->
             <div class="row">
                 <div class="col-md">
                     <div class="parent">
                         <div class="div1">
-                            <textarea class="ele1 form-control" type="text" name="comment" form="usrform" rows="5" required>
+                            <textarea class="ele1 form-control" type="text" name="PostMessage" [(ngModel)]="post.PostMessage" form="usrform" rows="5" required>
                             </textarea>
+                        </div>
+                        <div *ngIf="postform.controls.PostMessage?.touched && postform.controls.PostMessage.errors">
+                            <span *ngIf="postform.controls.PostMessage.errors.required">Post body is required</span>
                         </div>
                         <br>
                         <p class=" mb-0" style="color:#F74F22">NationalID</p>
-                        <div class="div2"><input class="form-control" placeholder="NationalID.."></div>
-                        <p class=" mb-0" style="color:#F74F22">Required Amount</p>
-                        <div class="div2"><input class="form-control" placeholder="Required Amount.."></div>
+                        <div class="div2"><input class="form-control" name="CaseNationalId" [(ngModel)]="post.CaseNationalId" placeholder="case NationalID.." required></div>
+                        <div *ngIf="postform.controls.CaseNationalId?.touched && postform.controls.CaseNationalId.errors">
 
+                            <span *ngIf="postform.controls.CaseNationalId.errors.required">Case National ID is required</span>
+                        </div>
+                        <br>
+                        <p class=" mb-0" style="color:#F74F22">Required Amount</p>
+                        <div class="div2"><input class="form-control" name="RequiredAmount" [(ngModel)]="post.RequiredAmount" placeholder="Required Amount.." required></div>
+                        <div *ngIf="postform.controls.RequiredAmount?.touched && postform.controls.RequiredAmount.errors">
+
+                            <span *ngIf="postform.controls.RequiredAmount.errors.required">Required Amount of money is required</span>
+                        </div>
                         <div class="div3">
                             <p class=" mb-0" style="color:#F74F22">Need Category</p>
-                            <select class="form-control" id="pet-select" form="usrform" required>
-                               
-                        
+                            <select class="form-control" name="NeedCatogry" [(ngModel)]="post.NeedCatogry" id="pet-select" form="usrform" required>
+                                                   
                                         <option value="medicine">Medicine</option>
-                                        <option value="clothes">Clothes</option>
+                                        <option value="cloths">Clothes</option>
                                         <option value="food">Food</option>
                             </select></div>
-                        <br>
-                        <!-- <p class="text-warning mb-0">Rest Amount</p>
-                        <div class="div4"> <input class="form-control" placeholder="Rest Amount.."></div> -->
+                        <div *ngIf="postform.controls.NeedCatogry?.touched && postform.controls.NeedCatogry.errors">
 
-                        <button class="div5 " type=" submit ">Publish <i>♥</i> </button>
+                            <span *ngIf="postform.controls.NeedCatogry.errors.required">specify need catogry</span>
+                        </div>
+                        <br>
+
+
+                        <button class="div5 " type=" submit " [disabled]="postform.invalid==true" (click)="modal.dismiss('Cross click')">Publish <i>♥</i> </button>
 
                     </div>
                 </div>

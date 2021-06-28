@@ -82,4 +82,14 @@ publishPost(post){
   
 }
 
+getOrganization(){
+
+  let headers = new HttpHeaders();
+
+  headers = headers.set('Authorization', localStorage.getItem("access_token"))
+
+  return this.httpclient.get(`http://localhost:55720/api/organizations`,{headers:headers});
+
+}
+
 }
