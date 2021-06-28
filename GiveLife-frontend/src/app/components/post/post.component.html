@@ -30,7 +30,7 @@
     </div>
 </div>  -->
 
-<div class="container mx-auto">
+<div class="container mx-auto" *ngFor = "let posts of postsArray">
     <div class="row">
         <div class="col">
             <div class="card " style="width: 14rem;">
@@ -40,13 +40,14 @@
                             <div class="parent">
                                 <div class="div1">
                                     <textarea class="ele1 form-control" type="text" name="comment" form="usrform" rows="5" required>
+                                        {{posts.postTxt}}
                                     </textarea>
                                 </div>
 
                                 <div class="div2"><input class="form-control" placeholder="Required Amount.."></div>
-                                <div class="div3"> <input class="form-control" placeholder="NeedCategory.."></div>
+                                <div class="div3"> <input class="form-control" placeholder="NeedCategory.." #amountg></div>
                                 <div class="div4"> <input class="form-control" placeholder="Rest Amount.."></div>
-                                <div class="div5"><button type="submit"> Donate <i>♥</i> </button></div>
+                                <div class="div5"><button type="submit" (click)="donateToPost(posts.postId,amountg.value)"> Donate <i>♥</i> </button></div>
                             </div>
                         </div>
                     </div>

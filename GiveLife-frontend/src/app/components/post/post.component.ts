@@ -10,7 +10,23 @@ export class PostComponent implements OnInit {
   subscriber
   postsArray : any
   constructor(public jwtservice:JwtService) { }
+  donateToPost(postID,amountg){
+    this.subscriber=this.jwtservice.donatePost(postID,amountg).subscribe(res =>{
 
+      let response:any=res;
+      if(response.success){
+        console.log(response);
+    
+      }
+    
+    },err=>{
+      alert(err.error);
+      console.log(err.error)
+      console.log(err.status)
+      console.log(err.statusText)
+      console.log(err.message)
+    })
+  }
   ngOnInit(): void {
     this.subscriber=this.jwtservice.getRegionPost().subscribe(res =>{
 
