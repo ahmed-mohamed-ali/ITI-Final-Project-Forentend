@@ -23,11 +23,9 @@ export class PostComponent implements OnInit {
  
   donateToPost(postId,amountg){
     
-    this.subscriber=this.jwtservice.donatePost(postId,amountg).subscribe(res =>{
   
 
-  donateToPost(postID,amountg){
-    this.subscriber=this.jwtservice.donatePost(postID,amountg).subscribe(res =>{
+    this.subscriber=this.jwtservice.donatePost(postId,amountg).subscribe(res =>{
 
 
       let response:any=res;
