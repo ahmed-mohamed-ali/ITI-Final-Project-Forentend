@@ -1,11 +1,20 @@
-<app-header></app-header>
-<button class="btn btn-outline-danger" style="margin:3rem; display:flex; " (click)="openpostform(postform)">Publish Post</button>
+<button class="btn btn-outline-danger" id="publichstyle" (click)="openpostform(postform)">Publish Post</button>
 <br>
 <br>
 <br>
 <!-- <button class="btn btn-lg btn-outline-primary" (click)="opencupon(cupon)">generate cupon</button> -->
 
 <app-post></app-post>
+<app-post></app-post>
+<app-post></app-post>
+<app-post></app-post>
+<app-post></app-post>
+<app-post></app-post>
+<app-post></app-post>
+<app-post></app-post>
+<app-post></app-post>
+<app-post></app-post>
+
 
 
 
@@ -129,13 +138,26 @@
                             </textarea>
                         </div>
                         <br>
+                        <p class=" mb-0" style="color:#F74F22">NationalID</p>
+                        <div class="div2"><input class="form-control" placeholder="NationalID.."></div>
+                        <p class=" mb-0" style="color:#F74F22">Required Amount</p>
                         <div class="div2"><input class="form-control" placeholder="Required Amount.."></div>
+
+                        <div class="div3">
+                            <p class=" mb-0" style="color:#F74F22">Need Category</p>
+                            <select class="form-control" id="pet-select" form="usrform" required>
+                               
+                        
+                                        <option value="medicine">Medicine</option>
+                                        <option value="clothes">Clothes</option>
+                                        <option value="food">Food</option>
+                            </select></div>
                         <br>
-                        <div class="div3"> <input class="form-control" placeholder="NeedCategory.."></div>
-                        <br>
-                        <div class="div4"> <input class="form-control" placeholder="Rest Amount.."></div>
-                        <br>
+                        <!-- <p class="text-warning mb-0">Rest Amount</p>
+                        <div class="div4"> <input class="form-control" placeholder="Rest Amount.."></div> -->
+
                         <button class="div5 " type=" submit ">Publish <i>♥</i> </button>
+
                     </div>
                 </div>
             </div>
