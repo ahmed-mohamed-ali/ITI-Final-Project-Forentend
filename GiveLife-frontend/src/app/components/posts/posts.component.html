@@ -5,7 +5,7 @@
 
 <app-post></app-post>
 
-<ng-template #postform let-modal class="manyofcards">
+<ng-template #postform let-modal>
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">
             Write a Post
@@ -37,7 +37,7 @@
 
                             <span *ngIf="postform.controls.CaseNationalId.errors.required">Case National ID is required</span>
                         </div>
-                        <br>
+
                         <p class=" mb-0" style="color:#F74F22">Required Amount</p>
                         <div class="div2"><input class="form-control" name="RequiredAmount" [(ngModel)]="post.RequiredAmount" placeholder="Required Amount.." required></div>
                         <div *ngIf="postform.controls.RequiredAmount?.touched && postform.controls.RequiredAmount.errors">

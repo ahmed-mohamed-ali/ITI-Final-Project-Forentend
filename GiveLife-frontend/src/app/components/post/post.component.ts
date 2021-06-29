@@ -77,10 +77,7 @@ export class PostComponent implements OnInit {
     
     },err=>{
       alert(err.message);
-      // console.log(err)
-      // console.log(err.status)
-      // console.log(err.statusText)
-      // console.log(err.message)
+     
      
     });
     
@@ -88,12 +85,14 @@ export class PostComponent implements OnInit {
   }
 
   selected=-1;
-selected1=-1;
+  selected1=-1;
   tempArray: any = [];
   newArray: any = [];
-  onChange(event: any) {
+  onChange(event: any)
+  {
     //console.log(event.target.checked);
-    if (event.target.checked ) {
+    if (event.target.checked ) 
+    {
       this.tempArray = [];
       this.newArray = [];
  
@@ -102,19 +101,23 @@ selected1=-1;
       this.postsArray = [];
       // console.log(this.newArray);
       this.newArray.push(this.tempArray);
-      for (let i = 0; i < this.newArray.length; i++) {
+      for (let i = 0; i < this.newArray.length; i++) 
+      {
         var firstArray = this.newArray[i];
-        for (let j = 0; j < firstArray.length; j++) {
+        for (let j = 0; j < firstArray.length; j++)
+         {
           var obj = firstArray[j];
           this.postsArray.push(obj);
           console.log(this.postsArray);
         }
       }
     }
-    else {
+    else 
+    {
     this.postsArray = this.arrays1;
     }
-  }
+    
+}
 //filter category
 categorySelect:any;
 onChangeCat(event: any){
@@ -156,8 +159,7 @@ onChangeCat(event: any){
 modalReference
   opendonateform(donateform,postId) {
     this.donnation.Amount="";
-    // this.DonnateForm=donateform
-    // this.customError.flag=false;
+    
     this.PostId=postId;
     console.log(this.PostId);
     this.modalReference = this.modalService.open(donateform);
@@ -166,12 +168,7 @@ modalReference
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
-  //   this.modalService.open(donateform,
-  //  {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-  //     this.closeResult = `Closed with: ${result}`;
-  //   }, (reason) => {
-  //     this.closeResult = 
-  //        `Dismissed ${this.getDismissReason(reason)}`;
+ 
     
   }
   

@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+///////////////////////////////////////////routing services///////////////////////////////////
 
   SignInClick= function () {
     this.router.navigate('/signin');
@@ -31,9 +32,24 @@ SignUpClick= function () {
   this.router.navigate('/signup');
 };
 
+HomeClick= function () {
+  this.router.navigate('/home');
+};
+
+ProfileClick= function () {
+  this.router.navigate('/profile');
+  this.JwtService.getProfile();
+};
+
+PostsClick= function () {
+  this.router.navigate('/posts');
+};
+
 isLogin(){
   return this.JwtService.loggedIn
 }
+
+////////////////////////////////Donate Pop Up/////////////////////////////////////////////
 
 closeResult = '';
 

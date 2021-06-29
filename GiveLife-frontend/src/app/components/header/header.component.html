@@ -3,13 +3,20 @@
 
         <li class="d-flex justify-content-start">
 
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="home" routerLink="/home" (click)="HomeClick();">
                 <img src="https://image.flaticon.com/icons/png/512/786/786660.png" width="30" height="30" class="d-inline-block align-top" alt="">FeEdakTesa3ed
             </a>
 
         </li>
     </ul>
-
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active text-dark mb-0 h6" href="Home" routerLink="/home" (click)="HomeClick();">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active text-dark mb-0 h6" href="Posts" routerLink="/posts" (click)="PostsClick();">Posts</a>
+        </li>
+    </ul>
     <ul class="nav justify-content-end">
 
         <li class="nav-item dropdown">
@@ -17,19 +24,20 @@
             <ul class="dropdown-menu">
                 <li *ngIf="!isLogin()"><a class="dropdown-item" href="signin" routerLink="/signin" (click)="SignInClick();">Sign In</a></li>
                 <li *ngIf="!isLogin()"><a class="dropdown-item" href="signup" routerLink="/signup" (click)="SignUpClick();">Sign Up</a></li>
+                <li *ngIf="isLogin()"><a class="dropdown-item" href="profile" routerLink="/profile" (click)="ProfileClick();">Profile</a></li>
 
             </ul>
 
         </li>
 
         <li class="nav-item">
-            <button type="button" id="tomakespace" style="margin-top: 0.41rem;" (click)="opendonateform(donateform)" class="btn btn-outline-danger">DONATE NOW <i>♥</i> </button>
+            <button type="button" id="tomakespace" style="margin-top: 0.41rem;" href="posts" routerLink="/posts" (click)="PostsClick();" class="btn btn-outline-danger">DONATE NOW <i>♥</i> </button>
         </li>
 
     </ul>
 </nav>
 
-<ng-template #donateform let-modal>
+<!-- <ng-template #donateform let-modal>
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">
             Step of Help
@@ -55,4 +63,4 @@
             </div>
         </form>
     </div>
-</ng-template>
+</ng-template> -->

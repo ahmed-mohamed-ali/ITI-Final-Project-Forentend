@@ -64,47 +64,48 @@
 
     </div>
 
-    <ng-template #donateform let-modal>
-        <div class="modal-header">
-            <h4 class="modal-title" id="modal-basic-title">
-                Step of Help
-            </h4>
-            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      
-                <span aria-hidden="true">
-                    ×
-                </span>
-            </button>
-        </div>
+</div>
+<ng-template #donateform let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">
+            Step of Help
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+  
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+    </div>
 
+    <!-- model -->
+    <div class="modal-body">
+        <form name="donateform" #donateform="ngForm" (ngSubmit)="donateToPost(Amount.value)">
 
-        <!-- model -->
-        <div class="modal-body">
-            <form name="donateform" #donateform="ngForm" (ngSubmit)="donateToPost(Amount.value)">
+            <div class="row">
+                <div class="col-md">
+                    <div class="parent">
+                        <br>
+                        <div class="div2">
+                            <input class="form-control" name="Amount" #Amount [(ngModel)]="donnation.Amount" placeholder="Donated Amount.." required pattern="^[0-9]*$">
+                        </div>
+                        <br>
+                        <div class="alert alert-warning" role="alert" *ngIf="donateform.controls.Amount?.touched && donateform.controls.Amount.errors">
 
-                <div class="row">
-                    <div class="col-md">
-                        <div class="parent">
-                            <br>
-                            <div class="div2">
-                                <input class="form-control" name="Amount" #Amount [(ngModel)]="donnation.Amount" placeholder="Donated Amount.." required pattern="^[0-9]*$">
-                            </div>
-                            <br>
-                            <div class="alert alert-warning" role="alert" *ngIf="donateform.controls.Amount?.touched && donateform.controls.Amount.errors">
-
-                                <span *ngIf="donateform.controls.Amount.errors.required"> donnation is required</span>
-                                <span *ngIf="donateform.controls.Amount.errors.pattern">enter valid amount of money</span>
-                            </div>
-                            <br>
-                            <div class="alert alert-warning" role="alert" *ngIf="customError.flag">
-                                <span>{{customError.serverError}}</span>
-
-                            </div>
-                            <br> <button class="div5 " type=" submit " [disabled]="donateform.invalid==true&&customError.flag==false">Donate <i>♥</i> </button>
+                            <span *ngIf="donateform.controls.Amount.errors.required"> donnation is required</span>
+                            <span *ngIf="donateform.controls.Amount.errors.pattern">enter valid amount of money</span>
+                        </div>
+                        <br>
+                        <div class="alert alert-warning" role="alert" *ngIf="customError.flag">
+                            <span>{{customError.serverError}}</span>
 
                         </div>
+                        <br> <button class="div5 " type=" submit " [disabled]="donateform.invalid==true&&customError.flag==false">Donate <i>♥</i> </button>
+
                     </div>
                 </div>
-            </form>
-        </div>
-    </ng-template>
+            </div>
+    </div>
+    </form>
+    </div>
+</ng-template>
