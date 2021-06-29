@@ -10,7 +10,7 @@
                         <!-- National ID -->
                         <div class="form-group">
                             <input class="form-control formElement" type="text" #NID="ngModel" [(ngModel)]="userService.selectedUser.NID" name="NID" placeholder="National ID" required minlength="14" pattern="(2|3)[0-9][1-9][0-1][1-9][0-3][1-9](01|02|03|04|11|12|13|14|15|16|17|18|19|21|22|23|24|25|26|27|28|29|31|32|33|34|35|88)\d\d\d\d\d">
-                            <div class="msg" *ngIf="NID.touched && NID.errors">
+                            <div class="msg alert alert-warning" role="alert" *ngIf="NID.touched && NID.errors">
                                 <span *ngIf="NID.errors.required">National ID is required.... </span>
                                 <span *ngIf="NID.errors.pattern">National ID pattern is wroong.... </span>
                                 <span *ngIf="NID.errors.minlength">National ID length must be 14 characters.... </span>
@@ -20,17 +20,18 @@
 
                         <div class="form-group">
                             <input class="form-control formElement" type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password" minlength="8" maxlength="8" required>
-                            <div class="msg" *ngIf="password.touched && password.errors">
+                            <div class="msg alert alert-warning" role="alert" *ngIf="password.touched && password.errors">
                                 <span *ngIf="password.errors.required" class="validation-message">password is required.... </span>
                                 <span *ngIf="password.errors.minlength" class="validation-message">password length must be 8 characters.... </span>
                             </div>
                         </div>
 
-                        <!-- Button -->
-                        <div class="msg" *ngIf="notexist==true">
-                            <span class="validation-message">national id or password is incorrect </span>
+
+                        <div class="msg alert alert-warning" role="alert" *ngIf="notexist==true">
+                            <span>national id or password is incorrect </span>
 
                         </div>
+                        <!-- Button -->
                         <div id="submitBtn" class="form-group">
                             <button type="submit" id="submit" class="button" [disabled]="signInForm.invalid==true">
                                 SUBMIT </button>
