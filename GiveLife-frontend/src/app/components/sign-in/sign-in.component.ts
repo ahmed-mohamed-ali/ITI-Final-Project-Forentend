@@ -24,7 +24,8 @@ export class SignInComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    
+    this.userService.selectedUser.NID=""
+    this.userService.selectedUser.password=""
   }
 
   onSubmit(form: NgForm) {
@@ -37,6 +38,7 @@ export class SignInComponent implements OnInit {
       if(response.success){
     
         localStorage.setItem('access_token', `Bearer ${response.token}`);
+        this.router?.navigate(['/profile']);
       }
     
     },err=>{

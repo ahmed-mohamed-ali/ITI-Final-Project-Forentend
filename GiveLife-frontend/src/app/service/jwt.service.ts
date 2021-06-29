@@ -27,20 +27,14 @@ getProfile(){
 
 logout() {
   localStorage.removeItem('access_token');
-  if(localStorage.getItem('user')){
-
-    localStorage.removeItem('user');
+  
   }
-  window.location.reload();
-}
 
 public get loggedIn(): boolean{
   return localStorage.getItem('access_token') !==  null;
 }
 
-public get user(): boolean{
-  return localStorage.getItem('user') !==  null;
-}
+
 
 ////////////////////////////////////////
 

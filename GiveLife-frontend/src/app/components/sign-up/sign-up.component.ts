@@ -11,6 +11,7 @@ import { UserService } from '../../shared/user.service'
 import { JwtService } from 'src/app/service/jwt.service';
 
 
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -20,10 +21,19 @@ export class SignUpComponent implements OnInit {
 
   regions=['Alexandria','Portsaid','Cairo','Ismailia','Suez']
   subscriber
+  conflictError={
+    flag:false,
+    message:""
+  }
   
   constructor(public userService: UserService,public jwtservice:JwtService , private router: Router) { }
 
   ngOnInit(): void {
+    this.userService.selectedUser.NID=""
+    this.userService.selectedUser.password=""
+    this.userService.selectedUser.visa=""
+    this.userService.selectedUser.name=""
+    this.conflictError.flag=false
   }
 
   onSubmit(form: NgForm) {
@@ -34,17 +44,22 @@ export class SignUpComponent implements OnInit {
       let response:any=res;
       console.log(response);
       if(response.success){
+        this.conflictError.flag=false
         alert(response.message);
         console.log(response.message)
+        this.router?.navigate(['/home']);
       }
     
     },err=>{
-      
-      alert(err.error);
-      console.log(err.error)
-      console.log(err.status)
-      console.log(err.statusText)
-      console.log(err.message)
+      if(err.status==409){
+        this.conflictError.flag=true;
+        this.conflictError.message=err.error
+      }
+      // alert(err.error);
+      // console.log(err.error)
+      // console.log(err.status)
+      // console.log(err.statusText)
+      // console.log(err.message)
     }
     )
    
