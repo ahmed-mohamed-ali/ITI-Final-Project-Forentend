@@ -35,8 +35,10 @@ SignUpClick= function () {
 HomeClick= function () {
   this.router.navigate('/home');
 };
+
 ProfileClick= function () {
   this.router.navigate('/profile');
+  this.JwtService.getProfile();
 };
 
 PostsClick= function () {
