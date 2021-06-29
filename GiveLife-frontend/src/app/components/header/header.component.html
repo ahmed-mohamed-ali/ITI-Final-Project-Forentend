@@ -24,6 +24,7 @@
             <ul class="dropdown-menu">
                 <li *ngIf="!isLogin()"><a class="dropdown-item" href="signin" routerLink="/signin" (click)="SignInClick();">Sign In</a></li>
                 <li *ngIf="!isLogin()"><a class="dropdown-item" href="signup" routerLink="/signup" (click)="SignUpClick();">Sign Up</a></li>
+                <li *ngIf="isLogin()"><a class="dropdown-item" href="profile" routerLink="/profile" (click)="ProfileClick();">Profile</a></li>
 
             </ul>
 

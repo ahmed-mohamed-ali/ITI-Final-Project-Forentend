@@ -34,6 +34,9 @@ SignUpClick= function () {
 HomeClick= function () {
   this.router.navigate('/home');
 };
+ProfileClick= function () {
+  this.router.navigate('/profile');
+};
 
 PostsClick= function () {
   this.router.navigate('/posts');
