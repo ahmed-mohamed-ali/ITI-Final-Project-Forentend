@@ -3,7 +3,7 @@
 
         <li class="d-flex justify-content-start">
 
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="home" routerLink="/home" (click)="HomeClick();">
                 <img src="https://image.flaticon.com/icons/png/512/786/786660.png" width="30" height="30" class="d-inline-block align-top" alt="">FeEdakTesa3ed
             </a>
 
@@ -11,10 +11,10 @@
     </ul>
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link active text-dark mb-0 h6" href="Home">Home</a>
+            <a class="nav-link active text-dark mb-0 h6" href="Home" routerLink="/home" (click)="HomeClick();">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active text-dark mb-0 h6" href="Posts">Posts</a>
+            <a class="nav-link active text-dark mb-0 h6" href="Posts" routerLink="/posts" (click)="PostsClick();">Posts</a>
         </li>
     </ul>
     <ul class="nav justify-content-end">

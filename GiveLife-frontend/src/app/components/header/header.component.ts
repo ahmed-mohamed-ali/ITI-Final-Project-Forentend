@@ -31,6 +31,10 @@ SignUpClick= function () {
   this.router.navigate('/signup');
 };
 
+HomeClick= function () {
+  this.router.navigate('/home');
+};
+
 PostsClick= function () {
   this.router.navigate('/posts');
 };
