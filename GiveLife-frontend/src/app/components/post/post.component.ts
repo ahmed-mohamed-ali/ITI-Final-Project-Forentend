@@ -23,8 +23,14 @@ export class PostComponent implements OnInit {
   DonnateForm
   arrays: any[];
   arrays1: any[];
+<<<<<<< HEAD
   categories :any
   constructor(public jwtservice:JwtService,public modalService: NgbModal) { }
+=======
+  filterNum:any[];
+  filterCat:any[];
+  constructor(public jwtservice:JwtService,private modalService: NgbModal) { }
+>>>>>>> eca137f264e0c92e0d49611ce717d8b43ea5d1a5
 
   donateToPost(amount,x:NgForm){
     console.log(this.PostId,amount);
@@ -55,7 +61,9 @@ export class PostComponent implements OnInit {
         console.log(response.post);
         this.arrays1=response.post;
         this.arrays=response.post;
-    
+        this.filterNum=response.post;
+        this.filterCat = response.post;
+        
       }
     
     },err=>{
@@ -66,6 +74,7 @@ export class PostComponent implements OnInit {
       // console.log(err.message)
     })
 
+<<<<<<< HEAD
      this.jwtservice.getOrganization().subscribe(res =>{
       let response:any=res;
       this.categories = response;
@@ -80,6 +89,8 @@ export class PostComponent implements OnInit {
      
      
     });
+=======
+>>>>>>> eca137f264e0c92e0d49611ce717d8b43ea5d1a5
     
   
   }
@@ -95,8 +106,8 @@ export class PostComponent implements OnInit {
     {
       this.tempArray = [];
       this.newArray = [];
- 
-      this.tempArray = this.postsArray.filter((e: any) => e.requiredAmount <= event.target.value);
+      console.log(this.filterCat);
+      this.tempArray = this.filterCat.filter((e: any) => e.requiredAmount <= event.target.value);
       console.log(this.tempArray);
       this.postsArray = [];
       // console.log(this.newArray);
@@ -108,34 +119,36 @@ export class PostComponent implements OnInit {
          {
           var obj = firstArray[j];
           this.postsArray.push(obj);
-          console.log(this.postsArray);
+       
+         
         }
-      }
+      }this.filterNum = this.postsArray;
     }
     else 
     {
-    this.postsArray = this.arrays1;
+      this.selected = -1
+      if(this.filterCat.length == 0 && this.selected1 ==-1){
+       
+        this.postsArray = this.arrays1;
+        this.filterNum =  this.postsArray;
+      }else{
+        this.postsArray = this.filterCat;
+  this.filterNum = this.arrays1;
+      }
+  
+   
     }
     
 }
 //filter category
-categorySelect:any;
+
 onChangeCat(event: any){
   if (event.target.checked ) {
 
-    for(let item of this.categories){
-      if(item.orgName == event.target.value){
-        this.categorySelect = item.organizationId;
-        console.log(this.categorySelect);
-        break;
-      }else{
-        this.categorySelect = -1;
-      }
-    }
+    
     this.tempArray = [];
-    this.newArray = [];
-  
-    this.tempArray = this.postsArray.filter((e: any) => e.needCatogry == this.categorySelect);
+    this.newArray = []; 
+    this.tempArray = this.filterNum.filter((e: any) => e.needCatogry == event.target.value);
     console.log(this.tempArray);
     this.postsArray = [];
    
@@ -146,13 +159,26 @@ onChangeCat(event: any){
       for (let j = 0; j < firstArray.length; j++) {
         var obj = firstArray[j];
         this.postsArray.push(obj);
-        console.log(this.postsArray);
+       
+       
       }
-    }
+    } this.filterCat = this.postsArray
+   
   }
   else {
-  this.postsArray = this.arrays1;
-  this.arrays = []
+    console.log(this.selected1);
+    this.selected1 = -1
+    if(this.filterNum.length == 0 && this.selected == -1){
+      this.postsArray = this.arrays1;
+
+      this.filterCat =  this.postsArray;
+      
+    }
+    else{
+      this.postsArray = this.filterNum;
+      this.filterCat = this.arrays1;
+    }
+ 
   }
 }
 

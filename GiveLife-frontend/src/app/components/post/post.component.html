@@ -1,5 +1,8 @@
-<div *ngFor="let item of ['pharmacy','medicine'];  let i = index">
-    <input type="checkbox" value="{{item}}" [checked]="selected1 === i" (change)="selected1 = i" (change)=" onChangeCat($event)">{{item}}
+<div *ngFor="let item of [0,1,2,3];  let i = index">
+    <input type="checkbox" value="{{item}}" [checked]="selected1 === i" (change)="selected1 = i" (change)=" onChangeCat($event)"> <span class="text-dark " *ngIf="item==0">Food</span>
+    <span class="text-dark " *ngIf="item==1">Medicine</span>
+    <span class="text-dark " *ngIf="item==2">Money</span>
+    <span class="text-dark " *ngIf="item==3">Cloths</span>
 </div>
 
 <div *ngFor="let item of [500,2000,3000];  let i = index">
