@@ -64,33 +64,33 @@
 
     </div>
 
-    <ng-template #donateform let-modal>
-        <div class="modal-header">
-            <h4 class="modal-title" id="modal-basic-title">
-                Step of Help
-            </h4>
-            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      
-                <span aria-hidden="true">
-                    ×
-                </span>
-            </button>
-        </div>
+</div>
+<ng-template #donateform let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">
+            Step of Help
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+  
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+    </div>
 
-
-        <!-- model -->
-        <div class="modal-body">
-            <form name="donateform" #donateform="ngForm" (ngSubmit)="donateToPost(Amount.value)">
-                <div class="row">
-                    <div class="col-md">
-                        <div class="parent">
-                            <br>
-                            <div class="div2"><input class="form-control" #Amount placeholder="Donated Amount.."></div>
-                            <br>
-                            <button class="div5 " type=" submit " (click)="modal.dismiss('Cross click')">Donate <i>♥</i> </button>
-                        </div>
+    <!-- model -->
+    <div class="modal-body">
+        <form name="donateform" #donateform="ngForm" (ngSubmit)="donateToPost(Amount.value)">
+            <div class="row">
+                <div class="col-md">
+                    <div class="parent">
+                        <br>
+                        <div class="div2"><input class="form-control" #Amount placeholder="Donated Amount.."></div>
+                        <br>
+                        <button class="div5 " type=" submit " (click)="modal.dismiss('Cross click')">Donate <i>♥</i> </button>
                     </div>
                 </div>
-            </form>
-        </div>
-    </ng-template>
+            </div>
+        </form>
+    </div>
+</ng-template>

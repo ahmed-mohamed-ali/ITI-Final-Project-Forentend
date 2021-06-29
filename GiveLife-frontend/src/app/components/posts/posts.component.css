@@ -57,3 +57,10 @@ body {
     margin-left: 15%;
     margin-right: 15%;
 }
+
+app-post {
+    display: inline-block;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

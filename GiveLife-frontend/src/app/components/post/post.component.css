@@ -36,13 +36,6 @@ body {
     padding-bottom: 10px !important
 }
 
-app-post {
-    display: inline-block;
-    justify-content: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
 .need {
     color: #F74F22;
 }
