@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+///////////////////////////////////////////routing services///////////////////////////////////
 
   SignInClick= function () {
     this.router.navigate('/signin');
@@ -45,6 +46,8 @@ PostsClick= function () {
 isLogin(){
   return this.JwtService.loggedIn
 }
+
+////////////////////////////////Donate Pop Up/////////////////////////////////////////////
 
 closeResult = '';
 
