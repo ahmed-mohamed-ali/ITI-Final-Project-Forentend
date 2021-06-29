@@ -41,13 +41,6 @@ body {
     padding-bottom: 20px !important
 }
 
-.manyofcards {
-    display: inline-block;
-    justify-content: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
 #publichstyle {
     margin: 0.6rem;
     clear: both;

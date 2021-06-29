@@ -31,6 +31,10 @@ SignUpClick= function () {
   this.router.navigate('/signup');
 };
 
+PostsClick= function () {
+  this.router.navigate('/posts');
+};
+
 isLogin(){
   return this.JwtService.loggedIn
 }

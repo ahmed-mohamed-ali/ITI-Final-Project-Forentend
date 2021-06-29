@@ -1,14 +1,10 @@
 //import { Component, OnInit } from '@angular/core';
 import { JwtService } from 'src/app/service/jwt.service';
-<<<<<<< HEAD
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
-
-=======
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { DonateComponent } from 'src/app/components/donate/donate.component';
->>>>>>> bc847458abd6fd9d38b5cb692da83cad6f4d95c5
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -17,7 +13,6 @@ import { DonateComponent } from 'src/app/components/donate/donate.component';
 export class PostComponent implements OnInit {
   subscriber
   postsArray : any
-<<<<<<< HEAD
   closeResult = '';
   PostId:any
   Moneyamount:any=0;
@@ -29,24 +24,6 @@ export class PostComponent implements OnInit {
   donateToPost(amount){
     console.log(this.PostId,amount);
     this.subscriber=this.jwtservice.donatePost(this.PostId,amount).subscribe(res =>{
-=======
- // bsModalRef: BsModalRef
- // private modalService: BsModalService
-  //private changeDetection: ChangeDetectorRef
-  constructor(public jwtservice:JwtService) { }
-
- /* reg(){
-    let bsModalRef = this.modalService.show(DonateComponent);
-    
-  }*/
- 
-  donateToPost(postId,amountg){
-    
-  
-
-    this.subscriber=this.jwtservice.donatePost(postId,amountg).subscribe(res =>{
-
->>>>>>> bc847458abd6fd9d38b5cb692da83cad6f4d95c5
 
       let response:any=res;
       if(response.success){
@@ -109,12 +86,14 @@ export class PostComponent implements OnInit {
   }
 
   selected=-1;
-selected1=-1;
+  selected1=-1;
   tempArray: any = [];
   newArray: any = [];
-  onChange(event: any) {
+  onChange(event: any)
+  {
     //console.log(event.target.checked);
-    if (event.target.checked ) {
+    if (event.target.checked ) 
+    {
       this.tempArray = [];
       this.newArray = [];
  
@@ -123,19 +102,23 @@ selected1=-1;
       this.postsArray = [];
       // console.log(this.newArray);
       this.newArray.push(this.tempArray);
-      for (let i = 0; i < this.newArray.length; i++) {
+      for (let i = 0; i < this.newArray.length; i++) 
+      {
         var firstArray = this.newArray[i];
-        for (let j = 0; j < firstArray.length; j++) {
+        for (let j = 0; j < firstArray.length; j++)
+         {
           var obj = firstArray[j];
           this.postsArray.push(obj);
           console.log(this.postsArray);
         }
       }
     }
-    else {
+    else 
+    {
     this.postsArray = this.arrays1;
     }
-  }
+    
+}
 //filter category
 categorySelect:any;
 onChangeCat(event: any){
