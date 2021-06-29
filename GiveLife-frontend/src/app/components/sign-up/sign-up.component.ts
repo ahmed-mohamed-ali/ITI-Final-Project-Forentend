@@ -47,7 +47,7 @@ export class SignUpComponent implements OnInit {
         this.conflictError.flag=false
         alert(response.message);
         console.log(response.message)
-        this.router?.navigate(['/home']);
+        this.router?.navigate(['/profile']);
       }
     
     },err=>{

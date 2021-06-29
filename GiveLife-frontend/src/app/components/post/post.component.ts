@@ -23,14 +23,9 @@ export class PostComponent implements OnInit {
   DonnateForm
   arrays: any[];
   arrays1: any[];
-<<<<<<< HEAD
-  categories :any
-  constructor(public jwtservice:JwtService,public modalService: NgbModal) { }
-=======
   filterNum:any[];
   filterCat:any[];
   constructor(public jwtservice:JwtService,private modalService: NgbModal) { }
->>>>>>> eca137f264e0c92e0d49611ce717d8b43ea5d1a5
 
   donateToPost(amount,x:NgForm){
     console.log(this.PostId,amount);
@@ -74,23 +69,6 @@ export class PostComponent implements OnInit {
       // console.log(err.message)
     })
 
-<<<<<<< HEAD
-     this.jwtservice.getOrganization().subscribe(res =>{
-      let response:any=res;
-      this.categories = response;
-        console.log(this.categories);
-      if(response.success){
-    
-    
-      }
-    
-    },err=>{
-      alert(err.message);
-     
-     
-    });
-=======
->>>>>>> eca137f264e0c92e0d49611ce717d8b43ea5d1a5
     
   
   }
@@ -107,7 +85,7 @@ export class PostComponent implements OnInit {
       this.tempArray = [];
       this.newArray = [];
       console.log(this.filterCat);
-      this.tempArray = this.filterCat.filter((e: any) => e.requiredAmount <= event.target.value);
+      this.tempArray = this.filterCat.filter((e: any) => e.restAmount <= event.target.value);
       console.log(this.tempArray);
       this.postsArray = [];
       // console.log(this.newArray);

@@ -22,11 +22,12 @@ const routes: Routes = [
   {path: 'signin', component: SignInComponent},
   {path: 'filter', component: FilterComponent},
   {path: 'cupon', component: CuponComponent},
-  {path: 'home', component: HomePageComponent},
+  {path: '', component: HomePageComponent},
   {path: 'postform', component: PostFormComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'posts', component: PostsComponent},
   {path: 'cupons', component: CuponsComponent},
+  
 
 ];
 
