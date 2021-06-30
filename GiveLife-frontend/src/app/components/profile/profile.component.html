@@ -59,12 +59,19 @@
     </div>
 </div>
 <hr class="new4">
-<!-- 
- <div class="container mx-auto" *ngFor="let item of postsArray">
+
+<div class="container mx-auto" *ngFor="let item of coordinatorPost">
 
     <div class="container mx-auto">
 
-        <div class="card " style="width: 24rem; height:19rem;">
+        <div class="card " style="width: 24rem; height:19rem; margin: 10px;
+        display: grid;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        margin: 50px 0 50px;
+        padding: 15px;
+        padding-bottom: 10px !important">
             <form class="card-details ">
                 <div class="form-group">
 
@@ -79,45 +86,47 @@
                             <p class="need ">Need Category</p>
 
                         </div>
-                      
-                            <p class="need">Required Amount</p>
 
-                        </div>
-                        <div id="d12" class="col">
-                            <p class="need">Rest Amount</p>
-                        </div>
-                        <div id="d12" class="col">
-                            <p class="need">Status</p>
-                        </div>
+                        <p class="need">Required Amount</p>
 
                     </div>
-                    <div class="row">
-                        <div id="d11" class="col">
-
-                            <p class="text-dark " *ngIf="item.needCatogry==0">Food</p>
-                            <p class="text-dark " *ngIf="item.needCatogry==1">Medicine</p>
-                            <p class="text-dark " *ngIf="item.needCatogry==2">Money</p>
-                            <p class="text-dark " *ngIf="item.needCatogry==3">Cloths</p>
-
-                        </div>
-                        <div id="d13" class="col">
-                            <p class="text-dark  ">{{item.requiredAmount}}</p>
-
-                        </div>
-                        <div id="d12" class="col">
-                            <p class="text-dark  ">{{item.restAmount}}</p>
-                        </div>
-                        <div id="d12" class="col">
-                            <p class="text-dark  ">{{item.status}}</p>
-                        </div>
-
+                    <div id="d12" class="col">
+                        <p class="need">Rest Amount</p>
                     </div>
-                   
+                    <div id="d12" class="col">
+                        <p class="need">Status</p>
+                    </div>
+
                 </div>
+                <div class="row">
+                    <div id="d11" class="col">
+
+                        <p class="text-dark " *ngIf="item.needCatogry==0">Food</p>
+                        <p class="text-dark " *ngIf="item.needCatogry==1">Medicine</p>
+                        <p class="text-dark " *ngIf="item.needCatogry==2">Money</p>
+                        <p class="text-dark " *ngIf="item.needCatogry==3">Cloths</p>
+
+                    </div>
+                    <div id="d13" class="col">
+                        <p class="text-dark  ">{{item.requiredAmount}}</p>
+
+                    </div>
+                    <div id="d12" class="col">
+                        <p class="text-dark  ">{{item.restAmount}}</p>
+                    </div>
+                    <div id="d12" class="col">
+
+                        <p class="text-dark " *ngIf="item.status==1">Pending</p>
+                        <p class="text-dark " *ngIf="item.status==2">Completed</p>
+                    </div>
+
+                </div>
+
+
 
             </form>
         </div>
 
     </div>
 
-</div>   -->
+</div>

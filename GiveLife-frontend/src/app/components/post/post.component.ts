@@ -42,8 +42,11 @@ export class PostComponent implements OnInit {
           }
     
     },err=>{
-      this.customError.flag=true
-      this.customError.serverError=err.error
+      if(err.status==404){
+
+        this.customError.flag=true
+        this.customError.serverError=err.error
+      }   
     //  alert(err.error);
    
   })

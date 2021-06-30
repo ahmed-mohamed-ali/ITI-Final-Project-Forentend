@@ -42,12 +42,8 @@ export class SignInComponent implements OnInit {
       }
     
     },err=>{
-      console.log(err.status);
       if(err.status==404){
-        // this.notexist=true;
-        // this.errorHandler.handleError(err);
-        // this.errorMessage = this.errorHandler.errorMessage;
-       this.notexist = true;
+        this.notexist=true;
       }
       this.errorHandler.handleError(err);
         this.errorMessage = this.errorHandler.errorMessage;

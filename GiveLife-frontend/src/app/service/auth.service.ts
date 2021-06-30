@@ -10,6 +10,7 @@ export class AuthService {
   constructor() { }
 
   get isLoggedIn():any {
+    
     if (localStorage.getItem('access_token') !==  null) {
       this.loggedIn.next(true);
     

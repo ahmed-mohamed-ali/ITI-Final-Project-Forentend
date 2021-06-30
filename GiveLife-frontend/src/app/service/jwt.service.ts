@@ -1,12 +1,18 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class JwtService {
+export class JwtService implements OnInit {
 
-  constructor(public httpclient:HttpClient) { }
+  constructor(public httpclient:HttpClient) {
+     
+   }
+  ngOnInit(): void {
+   
+  }
+  
 
   login(user) {
     console.log(user.NID,user.password);
@@ -27,6 +33,7 @@ getProfile(){
 
 logout() {
   localStorage.removeItem('access_token');
+ window.location.replace('')
   
   }
 
@@ -51,6 +58,7 @@ getCupon(){
   
 }
 getCoordinatorPost(){
+  window.location.reload();
   let headers = new HttpHeaders();
   headers = headers.set('Authorization', localStorage.getItem("access_token"))
   return  this.httpclient.get(`http://localhost:55720/api/Posts/getCoordinatorposts`,{headers:headers});
