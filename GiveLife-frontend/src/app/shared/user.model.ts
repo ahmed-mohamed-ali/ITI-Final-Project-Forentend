@@ -4,8 +4,8 @@ import{ NgForm, FormControl, FormGroup, Validators }from '@angular/forms'
 
 export class User {
     name:string;
-    NID:number;
-    visa:number;
+    NID:string;
+    visa:string;
     region:[];
     password:any;
 }

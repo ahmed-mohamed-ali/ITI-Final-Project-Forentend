@@ -15,7 +15,9 @@ import { JwtService } from 'src/app/service/jwt.service';
 export class ProfileComponent implements OnInit {
 
   subscriber
+  coordinator
   coordinatorPost
+
   constructor(public jwtservice:JwtService){
 
   }
@@ -24,8 +26,9 @@ export class ProfileComponent implements OnInit {
 
       let response:any=res;
       if(response.success){
-        console.log(response);
+        this.coordinator=response.coordinator
         this.coordinatorPost=response.coordinator.post
+        console.log(this.coordinator);
         console.log(this.coordinatorPost)
     
       }
@@ -38,15 +41,16 @@ export class ProfileComponent implements OnInit {
     })
   }
   PostsClick= function () {
-    this.router.navigate('/posts');
+    this.router?.navigate('/posts');
   };
 
   CuponsClick= function () {
-    this.router.navigate('/cupons');
+    this.router?.navigate('/cupons');
   };
 
   LogoutClick= function () {
-    this.router.navigate('/home');
+    this.jwtservice.logout();
+    this.router?.navigate('/home');
   };
   
 }

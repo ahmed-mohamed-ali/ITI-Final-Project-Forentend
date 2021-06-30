@@ -9,7 +9,7 @@
                                 <!-- <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div> -->
                                 <br>
                                 <br>
-                                <h6 class="f-w-600">Youssef Elsayed</h6>
+                                <h6 class="f-w-600">{{coordinator?.name}}</h6>
                                 <p>Region Coordinator</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
 
                                 <a class="btn btn-outline-light" routerLink="/home" (click)="LogoutClick()">Logout</a>
@@ -22,11 +22,11 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <p class="m-b-10 f-w-600">Region</p>
-                                        <h6 class="text-muted f-w-400">Ismailia</h6>
+                                        <h6 class="text-muted f-w-400">{{coordinator?.region.name}}</h6>
                                     </div>
                                     <div class="col-sm-6">
                                         <p class="m-b-10 f-w-600">Wallet Balance</p>
-                                        <h6 class="text-muted f-w-400">400.00</h6>
+                                        <h6 class="text-muted f-w-400">{{coordinator?.walletBalance}}</h6>
                                     </div>
                                 </div>
                                 <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Magesterials</h6>
@@ -59,3 +59,65 @@
     </div>
 </div>
 <hr class="new4">
+<!-- 
+ <div class="container mx-auto" *ngFor="let item of postsArray">
+
+    <div class="container mx-auto">
+
+        <div class="card " style="width: 24rem; height:19rem;">
+            <form class="card-details ">
+                <div class="form-group">
+
+                    <div class="row">
+                        <div id="d23" class="col">
+                            <p>{{item.postTxt}}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div id="d11" class="col">
+                            <p class="need ">Need Category</p>
+
+                        </div>
+                      
+                            <p class="need">Required Amount</p>
+
+                        </div>
+                        <div id="d12" class="col">
+                            <p class="need">Rest Amount</p>
+                        </div>
+                        <div id="d12" class="col">
+                            <p class="need">Status</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div id="d11" class="col">
+
+                            <p class="text-dark " *ngIf="item.needCatogry==0">Food</p>
+                            <p class="text-dark " *ngIf="item.needCatogry==1">Medicine</p>
+                            <p class="text-dark " *ngIf="item.needCatogry==2">Money</p>
+                            <p class="text-dark " *ngIf="item.needCatogry==3">Cloths</p>
+
+                        </div>
+                        <div id="d13" class="col">
+                            <p class="text-dark  ">{{item.requiredAmount}}</p>
+
+                        </div>
+                        <div id="d12" class="col">
+                            <p class="text-dark  ">{{item.restAmount}}</p>
+                        </div>
+                        <div id="d12" class="col">
+                            <p class="text-dark  ">{{item.status}}</p>
+                        </div>
+
+                    </div>
+                   
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>   -->

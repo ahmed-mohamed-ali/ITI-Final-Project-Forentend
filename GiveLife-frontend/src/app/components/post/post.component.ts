@@ -2,6 +2,7 @@
 import { JwtService } from 'src/app/service/jwt.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
+
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { DonateComponent } from 'src/app/components/donate/donate.component';
@@ -15,35 +16,36 @@ export class PostComponent implements OnInit {
   postsArray : any
   closeResult = '';
   PostId:any
-  Moneyamount:any=0;
+   donnation={
+    Amount:""
+  }
+  customError={flag:false,serverError:""}
+  DonnateForm
   arrays: any[];
   arrays1: any[];
   filterNum:any[];
   filterCat:any[];
   constructor(public jwtservice:JwtService,private modalService: NgbModal) { }
 
-  donateToPost(amount){
+  donateToPost(amount,x:NgForm){
     console.log(this.PostId,amount);
     this.subscriber=this.jwtservice.donatePost(this.PostId,amount).subscribe(res =>{
 
       let response:any=res;
       if(response.success){
         console.log(response);
-    
-      }
+        this.customError.flag=false
+        this.modalReference.close();
+        
+      
+          }
     
     },err=>{
-
-      alert(err.message);
-      console.log(err)
-
-      alert(err.error);
-      console.log(err.error)
-
-      console.log(err.status)
-      console.log(err.statusText)
-      console.log(err.message)
-    })
+      this.customError.flag=true
+      this.customError.serverError=err.error
+    //  alert(err.error);
+   
+  })
   }
   ngOnInit(): void {
     this.subscriber=this.jwtservice.getRegionPost().subscribe(res =>{
@@ -217,17 +219,20 @@ onChangeCat(event: any){
   }
 }
 
-
+modalReference
   opendonateform(donateform,postId) {
+    this.donnation.Amount="";
+    
     this.PostId=postId;
     console.log(this.PostId);
-    this.modalService.open(donateform,
-   {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    this.modalReference = this.modalService.open(donateform);
+    this.modalReference.result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
-      this.closeResult = 
-         `Dismissed ${this.getDismissReason(reason)}`;
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+ 
+    
   }
   
   private getDismissReason(reason: any): string {

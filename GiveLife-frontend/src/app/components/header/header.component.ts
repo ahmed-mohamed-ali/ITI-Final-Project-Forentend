@@ -19,30 +19,32 @@ export class HeaderComponent implements OnInit {
 
 ///////////////////////////////////////////routing services///////////////////////////////////
 
+
   SignInClick= function () {
-    this.router.navigate('/signin');
+    this.router?.navigate('/signin');
 };
+
 
 LogoutClick= function () {
   this.JwtService.logout()
-  this.router.navigate('/home');
+  this.router?.navigate('/home');
 };
 
 SignUpClick= function () {
-  this.router.navigate('/signup');
+  this.router?.navigate('/signup');
 };
 
 HomeClick= function () {
-  this.router.navigate('/home');
+  this.router?.navigate('/home');
 };
 
 ProfileClick= function () {
-  this.router.navigate('/profile');
-  this.JwtService.getProfile();
+  this.router?.navigate('/profile');
+
 };
 
 PostsClick= function () {
-  this.router.navigate('/posts');
+  this.router?.navigate('/posts');
 };
 
 isLogin(){
