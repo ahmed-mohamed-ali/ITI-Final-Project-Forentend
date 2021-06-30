@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
+import {ErrorHandlerService} from 'src/app/service/error-handler.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
 
@@ -13,12 +13,12 @@ import { JwtService } from 'src/app/service/jwt.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  public errorMessage: string = '';
   subscriber
   coordinator
   coordinatorPost
 
-  constructor(public jwtservice:JwtService){
+  constructor(public jwtservice:JwtService, private errorHandler: ErrorHandlerService){
 
   }
   ngOnInit(): void {
@@ -34,6 +34,8 @@ export class ProfileComponent implements OnInit {
       }
     
     },err=>{
+      this.errorHandler.handleError(err);
+        this.errorMessage = this.errorHandler.errorMessage;
       console.log(err)
       console.log(err.status)
       console.log(err.statusText)

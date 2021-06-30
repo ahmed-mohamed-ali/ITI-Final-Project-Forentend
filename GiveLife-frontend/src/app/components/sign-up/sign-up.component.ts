@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ErrorHandlerService} from 'src/app/service/error-handler.service'
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
@@ -18,7 +18,7 @@ import { JwtService } from 'src/app/service/jwt.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-
+  public errorMessage: string = '';
   regions=['Alexandria','Portsaid','Cairo','Ismailia','Suez']
   subscriber
   conflictError={
@@ -26,7 +26,7 @@ export class SignUpComponent implements OnInit {
     message:""
   }
   registerSucceed=false;
-  constructor(public userService: UserService,public jwtservice:JwtService , private router: Router) { }
+  constructor(public userService: UserService,public jwtservice:JwtService , private router: Router,private errorHandler: ErrorHandlerService) { }
 
   ngOnInit(): void {
     this.userService.selectedUser.NID=""
@@ -56,6 +56,9 @@ export class SignUpComponent implements OnInit {
       if(err.status==409){
         this.conflictError.flag=true;
         this.conflictError.message=err.error
+      }else{
+        this.errorHandler.handleError(err);
+        this.errorMessage = this.errorHandler.errorMessage;
       }
       // alert(err.error);
       // console.log(err.error)

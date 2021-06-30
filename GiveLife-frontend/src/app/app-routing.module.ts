@@ -25,12 +25,12 @@ const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomePageComponent},
   {path: 'postform', component: PostFormComponent},
-  {path:'500',component:ServerErrorComponent},
-  {path:'404',component:NotFoundComponent},
-  {path:'**',redirectTo: '/404', pathMatch: 'full'},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGuardService] },
   {path: 'posts', component: PostsComponent, canActivate:[AuthGuardService] },
   {path: 'cupons', component: CuponsComponent,canActivate:[AuthGuardService] },
+  {path:'500',component:ServerErrorComponent},
+  {path:'404',component:NotFoundComponent},
+  {path:'**',redirectTo: '/404', pathMatch: 'full'},
   
 
 ];

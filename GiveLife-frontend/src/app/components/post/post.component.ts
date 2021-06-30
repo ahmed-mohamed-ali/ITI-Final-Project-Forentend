@@ -46,7 +46,11 @@ export class PostComponent implements OnInit {
 
         this.customError.flag=true
         this.customError.serverError=err.error
-      }   
+      } 
+      else{
+        this.errorHandler.handleError(err);
+        this.errorMessage = this.errorHandler.errorMessage;
+      }  
     //  alert(err.error);
    
   })
@@ -68,11 +72,7 @@ export class PostComponent implements OnInit {
     },err=>{
       this.errorHandler.handleError(err);
         this.errorMessage = this.errorHandler.errorMessage;
-        console.log("hi");
-      // console.log(err)
-      // console.log(err.status)
-      // console.log(err.statusText)
-      // console.log(err.message)
+      
     })
 
     

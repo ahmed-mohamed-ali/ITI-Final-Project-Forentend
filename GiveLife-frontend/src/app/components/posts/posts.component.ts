@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
+import {ErrorHandlerService} from 'src/app/service/error-handler.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
 
@@ -14,7 +14,7 @@ import { JwtService } from 'src/app/service/jwt.service';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-
+  public errorMessage: string = '';
   subscriber
   post={
     PostMessage:"",
@@ -27,7 +27,7 @@ export class PostsComponent implements OnInit {
   }
   closeResult = '';
   
-  constructor(private modalService: NgbModal, public jwtservice:JwtService) {}
+  constructor(private modalService: NgbModal, public jwtservice:JwtService, private errorHandler: ErrorHandlerService) {}
   
   opencupon(cupon) {
     this.modalService.open(cupon,
@@ -72,7 +72,8 @@ export class PostsComponent implements OnInit {
       }
     
     },err=>{
-      alert(err.error);
+      this.errorHandler.handleError(err);
+        this.errorMessage = this.errorHandler.errorMessage;
       console.log(err.error)
       console.log(err.status)
       console.log(err.statusText)
