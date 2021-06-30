@@ -25,7 +25,7 @@ export class SignUpComponent implements OnInit {
     flag:false,
     message:""
   }
-  
+  registerSucceed=false;
   constructor(public userService: UserService,public jwtservice:JwtService , private router: Router) { }
 
   ngOnInit(): void {
@@ -34,6 +34,7 @@ export class SignUpComponent implements OnInit {
     this.userService.selectedUser.visa=""
     this.userService.selectedUser.name=""
     this.conflictError.flag=false
+    this.registerSucceed=false;
   }
 
   onSubmit(form: NgForm) {
@@ -45,9 +46,10 @@ export class SignUpComponent implements OnInit {
       console.log(response);
       if(response.success){
         this.conflictError.flag=false
-        alert(response.message);
-        console.log(response.message)
-        this.router?.navigate(['/profile']);
+        this.registerSucceed=true;
+        // alert(response.message);
+        // console.log(response.message)
+        this.router?.navigate(['/']);
       }
     
     },err=>{
