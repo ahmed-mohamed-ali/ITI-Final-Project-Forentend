@@ -35,6 +35,8 @@ import { FilterComponent } from './components/filter/filter.component';
 // auth guard service
 import { AuthGuardService } from './service/auth-guard.service';
 import { DonateComponent } from './components/donate/donate.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ServerErrorComponent } from './components/server-error/server-error.component';
 
 
 
@@ -55,7 +57,9 @@ import { DonateComponent } from './components/donate/donate.component';
     ProfileComponent,
     PostsComponent,
     CuponsComponent,
-    DonateComponent
+    DonateComponent,
+    NotFoundComponent,
+    ServerErrorComponent
   ],
   imports: [
     BrowserModule,

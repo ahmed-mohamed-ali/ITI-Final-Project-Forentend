@@ -43,8 +43,14 @@ ProfileClick= function () {
 
 };
 
-PostsClick= function () {
-  this.router?.navigate('/posts');
+PostsClick() {
+  if(this.isLogin() == false){
+    this.route?.navigate(['/signin']);
+  }
+  else{
+    this.route?.navigate(['/posts']);
+  }
+  
 };
 
 isLogin(){

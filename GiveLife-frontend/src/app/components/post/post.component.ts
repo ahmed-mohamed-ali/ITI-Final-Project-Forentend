@@ -2,7 +2,7 @@
 import { JwtService } from 'src/app/service/jwt.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
-
+import {ErrorHandlerService} from 'src/app/service/error-handler.service'
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { DonateComponent } from 'src/app/components/donate/donate.component';
@@ -12,6 +12,7 @@ import { DonateComponent } from 'src/app/components/donate/donate.component';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
+  public errorMessage: string = '';
   subscriber
   postsArray : any
   closeResult = '';
@@ -25,7 +26,7 @@ export class PostComponent implements OnInit {
   arrays1: any[];
   filterNum:any[];
   filterCat:any[];
-  constructor(public jwtservice:JwtService,private modalService: NgbModal) { }
+  constructor(public jwtservice:JwtService,private modalService: NgbModal, private errorHandler: ErrorHandlerService) { }
 
   donateToPost(amount,x:NgForm){
     console.log(this.PostId,amount);
@@ -62,7 +63,9 @@ export class PostComponent implements OnInit {
       }
     
     },err=>{
-      alert(err.message);
+      this.errorHandler.handleError(err);
+        this.errorMessage = this.errorHandler.errorMessage;
+        console.log("hi");
       // console.log(err)
       // console.log(err.status)
       // console.log(err.statusText)

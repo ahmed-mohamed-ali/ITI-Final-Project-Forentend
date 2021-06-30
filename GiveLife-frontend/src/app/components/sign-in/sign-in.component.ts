@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ErrorHandlerService} from 'src/app/service/error-handler.service'
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
@@ -16,10 +16,10 @@ import { JwtService } from 'src/app/service/jwt.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-
+  public errorMessage: string = '';
   subscriber:any
   notexist:boolean;
-  constructor(public userService: UserService,public jwtservice:JwtService,private router: Router) {
+  constructor(public userService: UserService,public jwtservice:JwtService,private router: Router,private errorHandler: ErrorHandlerService) {
     this.notexist=false
    }
 
@@ -42,9 +42,15 @@ export class SignInComponent implements OnInit {
       }
     
     },err=>{
-      if(err.status=404){
-        this.notexist=true;
+      console.log(err.status);
+      if(err.status==404){
+        // this.notexist=true;
+        // this.errorHandler.handleError(err);
+        // this.errorMessage = this.errorHandler.errorMessage;
+       this.notexist = true;
       }
+      this.errorHandler.handleError(err);
+        this.errorMessage = this.errorHandler.errorMessage;
       console.log(err)
       console.log(err.status)
       console.log(err.statusText)
