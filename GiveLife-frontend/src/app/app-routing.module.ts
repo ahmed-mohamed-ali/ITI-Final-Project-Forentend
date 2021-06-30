@@ -17,17 +17,17 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
-  { path: 'post', component: PostComponent},
+  { path: 'post', component: PostComponent,canActivate:[AuthGuardService] },
   {path: 'signup', component: SignUpComponent},
   {path: 'signin', component: SignInComponent},
   {path: 'filter', component: FilterComponent},
-  {path: 'cupon', component: CuponComponent},
+  {path: 'cupon', component: CuponComponent,canActivate:[AuthGuardService] },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomePageComponent},
   {path: 'postform', component: PostFormComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'posts', component: PostsComponent},
-  {path: 'cupons', component: CuponsComponent},
+  {path: 'profile', component: ProfileComponent,canActivate:[AuthGuardService] },
+  {path: 'posts', component: PostsComponent, canActivate:[AuthGuardService] },
+  {path: 'cupons', component: CuponsComponent,canActivate:[AuthGuardService] },
   
 
 ];

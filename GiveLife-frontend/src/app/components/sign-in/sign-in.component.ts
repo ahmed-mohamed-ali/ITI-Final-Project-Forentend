@@ -42,7 +42,7 @@ export class SignInComponent implements OnInit {
       }
     
     },err=>{
-      if(err.status=404){
+      if(err.status==404){
         this.notexist=true;
       }
       console.log(err)

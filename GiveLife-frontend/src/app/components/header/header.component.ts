@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
 
 LogoutClick= function () {
   this.JwtService.logout()
-  this.router?.navigate('/home');
+  
 };
 
 SignUpClick= function () {
@@ -44,7 +44,9 @@ ProfileClick= function () {
 };
 
 PostsClick= function () {
+  
   this.router?.navigate('/posts');
+
 };
 
 isLogin(){
