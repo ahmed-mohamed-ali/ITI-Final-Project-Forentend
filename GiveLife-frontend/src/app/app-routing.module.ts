@@ -22,11 +22,8 @@ const routes: Routes = [
   {path: 'signin', component: SignInComponent},
   {path: 'filter', component: FilterComponent},
   {path: 'cupon', component: CuponComponent},
-
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomePageComponent},
-
-  
   {path: 'postform', component: PostFormComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'posts', component: PostsComponent},
