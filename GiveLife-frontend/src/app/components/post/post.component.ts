@@ -72,7 +72,7 @@ export class PostComponent implements OnInit {
     
   
   }
-
+//filter by rest amount
   selected=-1;
   selected1=-1;
   tempArray: any = [];
@@ -82,6 +82,7 @@ export class PostComponent implements OnInit {
     //console.log(event.target.checked);
     if (event.target.checked ) 
     {
+      this.eNum = event.target;
       this.tempArray = [];
       this.newArray = [];
       console.log(this.filterCat);
@@ -105,11 +106,37 @@ export class PostComponent implements OnInit {
     else 
     {
       this.selected = -1
-      if(this.filterCat.length == 0 && this.selected1 ==-1){
-       
+      if(this.selected ==-1 &&this.selected1==-1){
         this.postsArray = this.arrays1;
-        this.filterNum =  this.postsArray;
-      }else{
+        this.filterNum = this.arrays1;
+        this.filterCat = this.arrays1;
+      }
+     else if( this.selected1 !=-1 && this.eCat.checked){
+      this.filterNum=this.arrays1;
+        this.tempArray = [];
+        this.newArray = []; 
+        this.tempArray = this.arrays.filter((e: any) => e.needCatogry == this.eCat.value);
+        console.log(this.tempArray);
+        this.postsArray = [];
+       
+        // console.log(this.newArray);
+        this.newArray.push(this.tempArray);
+        for (let i = 0; i < this.newArray.length; i++) {
+          var firstArray = this.newArray[i];
+          for (let j = 0; j < firstArray.length; j++) {
+            var obj = firstArray[j];
+            this.postsArray.push(obj);
+           
+           
+          }
+        } this.filterCat = this.postsArray
+      }
+      else if(this.eNum.checked !=true){
+        this.postsArray = this.arrays1;
+        this.filterNum = this.arrays1;
+        this.filterCat = this.arrays1;
+      }
+      else{
         this.postsArray = this.filterCat;
   this.filterNum = this.arrays1;
       }
@@ -119,11 +146,12 @@ export class PostComponent implements OnInit {
     
 }
 //filter category
-
+eNum:any;
+eCat:any;
 onChangeCat(event: any){
   if (event.target.checked ) {
 
-    
+    this.eCat = event.target;
     this.tempArray = [];
     this.newArray = []; 
     this.tempArray = this.filterNum.filter((e: any) => e.needCatogry == event.target.value);
@@ -146,11 +174,42 @@ onChangeCat(event: any){
   else {
     console.log(this.selected1);
     this.selected1 = -1
-    if(this.filterNum.length == 0 && this.selected == -1){
+    if(this.selected1==-1&&this.selected==-1){
       this.postsArray = this.arrays1;
+      this.filterNum = this.arrays1;
+      this.filterCat = this.arrays1;
+    }
+   
+   else if( this.selected != -1 && this.eNum.checked==true){
+      console.log("hi");
+      // this.postsArray = this.arrays1;
 
-      this.filterCat =  this.postsArray;
+      // this.filterCat =  this.postsArray;
+      this.filterCat=this.arrays1;
+      this.tempArray = [];
+      this.newArray = []; 
+      console.log(this.eNum.value);
+      this.tempArray = this.arrays1.filter((e: any) => e.restAmount <= this.eNum.value);
+      console.log(this.tempArray);
+      this.postsArray = [];
+     
+      // console.log(this.newArray);
+      this.newArray.push(this.tempArray);
+      for (let i = 0; i < this.newArray.length; i++) {
+        var firstArray = this.newArray[i];
+        for (let j = 0; j < firstArray.length; j++) {
+          var obj = firstArray[j];
+          this.postsArray.push(obj);
+         
+         
+        }
+      } this.filterNum = this.postsArray
       
+    }
+    else if(this.eCat.checked !=true){
+      this.postsArray = this.arrays1;
+      this.filterNum = this.arrays1;
+      this.filterCat = this.arrays1;
     }
     else{
       this.postsArray = this.filterNum;
