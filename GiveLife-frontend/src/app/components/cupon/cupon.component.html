@@ -1,29 +1,73 @@
-<div class="container mx-auto">
+<div class="container">
+    <div class=" d-flex flex-row justify-content-around flex-wrap p-5">
+
+        <div class="card align-self-between p-3 mb-5" style="width:30%" *ngFor="let cupon of cupons">
+            <form class="card-details ">
+                <div class="form-group">
+                    <!-- <p class="text-warning mb-0">Cupon Identity</p> -->
+                    <p class="text" type="text" name="name" placeholder="Identity"><span class="t1"> Cupon Identity :
+                        </span> {{cupon.cuponIdentity}}</p>
+
+                    <!-- <p class="text-warning mb-0">NationalID</p> -->
+                    <p class="text" type="text" name="name" placeholder="Id"><span class="t1">NationalID : </span>
+                        {{cupon.caseNational.nationalId}}</p>
+
+                    <!-- <p class="text-warning mb-0">Case Name</p> -->
+                    <p class="text" type="text" name="exp" placeholder="Person Name" size="20" id="exp" minlength="20"
+                        maxlength="20" value="samira elsayed"><span class="t1">Case Name : </span>
+                        {{cupon.caseNational.name}}
+                    </p>
+
+                    <!-- <div class="col-sm-8">
+                    </div> -->
+                    <!-- <p class="text-warning mb-0">Money</p> -->
+                    <p class="text" type="Money" name="exp" placeholder="EGP" size="20" id="exp" value="600.00">
+                        <span class="t1">Money : </span> {{cupon.amountOfMoney}}
+                    </p>
+                </div>
+
+                <div>
+                    <!-- <p class="text-warning mb-0">Expiration</p> -->
+                    <p class="text" type="date" name="cvv" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="20"
+                        maxlength="20" alue="10/12/2022"><span class="t1">Expiration : </span> {{cupon.expireDate|date}}
+                    </p>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- <div class="container mx-auto">
     <div class="row">
         <div class="col">
             <div class="card " *ngFor="let cupon of cupons" style="width: 14rem;">
                 <form class="card-details ">
                     <div class="form-group">
                         <p class="text-warning mb-0">Cupon Identity</p>
-                        <p type="text" name="name" placeholder="Identity">{{cupon.cuponIdentity}}</p>
+                        <p type="text" name="name" placeholder="Identity"> Cupon Identity : {{cupon.cuponIdentity}}</p>
 
                         <p class="text-warning mb-0">NationalID</p>
                         <p type="text" name="name" placeholder="Id">{{cupon.caseNational.nationalId}}</p>
 
 
-                        <div class="row d-flex">
+                        <div class="row">
                             <div class="col-sm-8">
                                 <p class="text-warning mb-0">Case Name</p>
-                                <p type="text" name="exp" placeholder="Person Name" size="20" id="exp" minlength="20" maxlength="20" value="samira elsayed">{{cupon.caseNational.name}}
+                                <p type="text" name="exp" placeholder="Person Name" size="20" id="exp" minlength="20"
+                                    maxlength="20" value="samira elsayed">Case Name : {{cupon.caseNational.name}}
                                 </p>
                                 <div class="col-sm-8">
                                 </div>
                                 <p class="text-warning mb-0">Money</p>
-                                <p type="Money" name="exp" placeholder="EGP" size="20" id="exp" value="600.00">{{cupon.amountOfMoney}}</p>
+                                <p type="Money" name="exp" placeholder="EGP" size="20" id="exp" value="600.00">
+                                    {{cupon.amountOfMoney}}</p>
                             </div>
                             <div class="col-sm-8">
                                 <p class="text-warning mb-0">Expiration</p>
-                                <p type="date" name="cvv" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="20" maxlength="20" alue="10/12/2022">{{cupon.expireDate|date}}</p>
+                                <p type="date" name="cvv" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="20"
+                                    maxlength="20" alue="10/12/2022">{{cupon.expireDate|date}}</p>
                             </div>
 
                         </div>
@@ -32,4 +76,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

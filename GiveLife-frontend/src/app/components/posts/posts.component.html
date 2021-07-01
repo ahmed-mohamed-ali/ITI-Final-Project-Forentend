@@ -3,6 +3,47 @@
 <br>
 <br>
 
+<!-- <main class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
+    <div class="row flex-grow-sm-1 flex-grow-0">
+        <div class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
+            <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+                <h6 class="d-none d-sm-block text-muted">Sticky Sidebar</h6>
+                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-2 text-truncate">
+                            <i class="bi bi-house fs-4"></i>
+                            <span class="d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate">
+                            <i class="bi bi-speedometer fs-4"></i>
+                            <span class="d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-card-text fs-4"></i>
+                            <span class="d-none d-sm-inline">Orders</span> </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-bricks fs-4"></i>
+                            <span class="d-none d-sm-inline">Products</span> </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-people fs-4"></i>
+                            <span class="d-none d-sm-inline">Customers</span> </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col overflow-auto h-100">
+            <div class="bg-light border rounded-3 p-3">
+                <app-post></app-post>
+            </div>
+        </div>
+    </div>
+</main> -->
+
 <app-post></app-post>
 
 <ng-template #postform let-modal>
@@ -31,21 +72,21 @@
                             <span *ngIf="postform.controls.PostMessage.errors.required">Post body is required</span>
                         </div>
                         <br>
-                        <p class=" mb-0" style="color:#F74F22">NationalID</p>
+                        <p class=" mb-0" style="color:#DC3545">NationalID</p>
                         <div class="div2"><input class="form-control" name="CaseNationalId" [(ngModel)]="post.CaseNationalId" placeholder="case NationalID.." required></div>
                         <div *ngIf="postform.controls.CaseNationalId?.touched && postform.controls.CaseNationalId.errors">
 
                             <span *ngIf="postform.controls.CaseNationalId.errors.required">Case National ID is required</span>
                         </div>
 
-                        <p class=" mb-0" style="color:#F74F22">Required Amount</p>
+                        <p class=" mb-0" style="color:#DC3545">Required Amount</p>
                         <div class="div2"><input class="form-control" name="RequiredAmount" [(ngModel)]="post.RequiredAmount" placeholder="Required Amount.." required></div>
                         <div *ngIf="postform.controls.RequiredAmount?.touched && postform.controls.RequiredAmount.errors">
 
                             <span *ngIf="postform.controls.RequiredAmount.errors.required">Required Amount of money is required</span>
                         </div>
                         <div class="div3">
-                            <p class=" mb-0" style="color:#F74F22">Need Category</p>
+                            <p class=" mb-0" style="color:#DC3545">Need Category</p>
                             <select class="form-control" name="NeedCatogry" [(ngModel)]="post.NeedCatogry" id="pet-select" form="usrform" required>
                                                    
                                         <option value="medicine">Medicine</option>

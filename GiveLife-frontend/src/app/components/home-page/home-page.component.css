@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins|Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&family=Roboto+Slab&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&family=Roboto+Slab&display=swap');
+
+
+    
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0
+    padding: 0;
+    font-family: 'Mitr', sans-serif;
 }
 
 body {
@@ -101,11 +107,11 @@ body {
     opacity: .7;
 }
 
-#photoscards {
+/* #photoscards {
     padding: 5rem;
     mask-position: center;
     background-image: url(http://bighearts.wgl-demo.net/wp-content/uploads/2020/08/bg.jpg);
-}
+} */
 
 
 /* @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&family=Roboto+Slab&display=swap');
