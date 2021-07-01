@@ -2,7 +2,7 @@
 import { JwtService } from 'src/app/service/jwt.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms'
-
+import {ErrorHandlerService} from 'src/app/service/error-handler.service'
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { DonateComponent } from 'src/app/components/donate/donate.component';
@@ -12,6 +12,7 @@ import { DonateComponent } from 'src/app/components/donate/donate.component';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
+  public errorMessage: string = '';
   subscriber
   postsArray : any
   closeResult = '';
@@ -25,7 +26,7 @@ export class PostComponent implements OnInit {
   arrays1: any[];
   filterNum:any[];
   filterCat:any[];
-  constructor(public jwtservice:JwtService,private modalService: NgbModal) { }
+  constructor(public jwtservice:JwtService,private modalService: NgbModal, private errorHandler: ErrorHandlerService) { }
 
   donateToPost(amount,x:NgForm){
     console.log(this.PostId,amount);
@@ -41,8 +42,15 @@ export class PostComponent implements OnInit {
           }
     
     },err=>{
-      this.customError.flag=true
-      this.customError.serverError=err.error
+      if(err.status==404){
+
+        this.customError.flag=true
+        this.customError.serverError=err.error
+      } 
+      else{
+        this.errorHandler.handleError(err);
+        this.errorMessage = this.errorHandler.errorMessage;
+      }  
     //  alert(err.error);
    
   })
@@ -62,17 +70,15 @@ export class PostComponent implements OnInit {
       }
     
     },err=>{
-      alert(err.message);
-      // console.log(err)
-      // console.log(err.status)
-      // console.log(err.statusText)
-      // console.log(err.message)
+      this.errorHandler.handleError(err);
+        this.errorMessage = this.errorHandler.errorMessage;
+      
     })
 
     
   
   }
-
+//filter by rest amount
   selected=-1;
   selected1=-1;
   tempArray: any = [];
@@ -82,6 +88,7 @@ export class PostComponent implements OnInit {
     //console.log(event.target.checked);
     if (event.target.checked ) 
     {
+      this.eNum = event.target;
       this.tempArray = [];
       this.newArray = [];
       console.log(this.filterCat);
@@ -105,11 +112,37 @@ export class PostComponent implements OnInit {
     else 
     {
       this.selected = -1
-      if(this.filterCat.length == 0 && this.selected1 ==-1){
-       
+      if(this.selected ==-1 &&this.selected1==-1){
         this.postsArray = this.arrays1;
-        this.filterNum =  this.postsArray;
-      }else{
+        this.filterNum = this.arrays1;
+        this.filterCat = this.arrays1;
+      }
+     else if( this.selected1 !=-1 && this.eCat.checked){
+      this.filterNum=this.arrays1;
+        this.tempArray = [];
+        this.newArray = []; 
+        this.tempArray = this.arrays.filter((e: any) => e.needCatogry == this.eCat.value);
+        console.log(this.tempArray);
+        this.postsArray = [];
+       
+        // console.log(this.newArray);
+        this.newArray.push(this.tempArray);
+        for (let i = 0; i < this.newArray.length; i++) {
+          var firstArray = this.newArray[i];
+          for (let j = 0; j < firstArray.length; j++) {
+            var obj = firstArray[j];
+            this.postsArray.push(obj);
+           
+           
+          }
+        } this.filterCat = this.postsArray
+      }
+      else if(this.eNum.checked !=true){
+        this.postsArray = this.arrays1;
+        this.filterNum = this.arrays1;
+        this.filterCat = this.arrays1;
+      }
+      else{
         this.postsArray = this.filterCat;
   this.filterNum = this.arrays1;
       }
@@ -119,11 +152,12 @@ export class PostComponent implements OnInit {
     
 }
 //filter category
-
+eNum:any;
+eCat:any;
 onChangeCat(event: any){
   if (event.target.checked ) {
 
-    
+    this.eCat = event.target;
     this.tempArray = [];
     this.newArray = []; 
     this.tempArray = this.filterNum.filter((e: any) => e.needCatogry == event.target.value);
@@ -146,11 +180,42 @@ onChangeCat(event: any){
   else {
     console.log(this.selected1);
     this.selected1 = -1
-    if(this.filterNum.length == 0 && this.selected == -1){
+    if(this.selected1==-1&&this.selected==-1){
       this.postsArray = this.arrays1;
+      this.filterNum = this.arrays1;
+      this.filterCat = this.arrays1;
+    }
+   
+   else if( this.selected != -1 && this.eNum.checked==true){
+      console.log("hi");
+      // this.postsArray = this.arrays1;
 
-      this.filterCat =  this.postsArray;
+      // this.filterCat =  this.postsArray;
+      this.filterCat=this.arrays1;
+      this.tempArray = [];
+      this.newArray = []; 
+      console.log(this.eNum.value);
+      this.tempArray = this.arrays1.filter((e: any) => e.restAmount <= this.eNum.value);
+      console.log(this.tempArray);
+      this.postsArray = [];
+     
+      // console.log(this.newArray);
+      this.newArray.push(this.tempArray);
+      for (let i = 0; i < this.newArray.length; i++) {
+        var firstArray = this.newArray[i];
+        for (let j = 0; j < firstArray.length; j++) {
+          var obj = firstArray[j];
+          this.postsArray.push(obj);
+         
+         
+        }
+      } this.filterNum = this.postsArray
       
+    }
+    else if(this.eCat.checked !=true){
+      this.postsArray = this.arrays1;
+      this.filterNum = this.arrays1;
+      this.filterCat = this.arrays1;
     }
     else{
       this.postsArray = this.filterNum;
