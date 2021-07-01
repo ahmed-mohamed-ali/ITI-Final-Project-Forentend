@@ -57,9 +57,12 @@
                             <span *ngIf="postform.controls.NeedCatogry.errors.required">specify need catogry</span>
                         </div>
                         <br>
+                        <div class="alert alert-warning" role="alert" *ngIf=" this.customError.flag">
+                            <span>{{this.customError.message}}</span>
 
+                        </div>
 
-                        <button class="div5 " type=" submit " [disabled]="postform.invalid==true" (click)="modal.dismiss('Cross click')">Publish <i>♥</i> </button>
+                        <button class="div5 " type=" submit " [disabled]="postform.invalid==true&&this.customError.flag==false">Publish <i>♥</i> </button>
 
                     </div>
                 </div>
