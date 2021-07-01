@@ -4,7 +4,7 @@ button:not(.close) {
     height: 55px;
     border: 1px;
     border-radius: 30px;
-    background-color: #F74F22;
+    background-color: #DC3545;
     font-weight: normal;
     color: white;
     font-size: large;
@@ -13,10 +13,10 @@ button:not(.close) {
 
 button:hover {
     font-size: larger;
-    font-weight: lighter;
+    font-weight: bold;
     background-color: white;
-    border: 1px solid #F74F22;
-    color: #F74F22;
+    border: 2px solid #DC3545;
+    color: #DC3545;
     transition: 0.7s;
 }
 
@@ -37,5 +37,66 @@ body {
 }
 
 .need {
-    color: #F74F22;
+    color: #DC3545;
 }
+
+h4{
+    color: rgb(118,118,118);
+}
+
+.a{
+    color: rgb(118,118,118);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* a:hover{
+    color: #DC3545;
+} */
+
+.categoryFilter{
+    display: inline-block;
+    padding: 6px;
+
+}
+
+
+
+
+/* side bar */
+/* 
+.sidenav {
+    margin-top: 76px;
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #F8F9FA;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 10px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #DC3545;
+  }
+  .main {
+    margin-left: 160px;
+    font-size: 28px; 
+    padding: 0px 10px;
+  }
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  } */
+
+  /* end of sidebar */

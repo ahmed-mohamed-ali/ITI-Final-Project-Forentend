@@ -4,6 +4,12 @@
     border: 1px solid #F74F22;
 } */
 
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&family=Roboto+Slab&display=swap');
+
+*{
+    font-family: 'Mitr', sans-serif;
+}
+
 hr.new4 {
     border: 1px solid red;
 }

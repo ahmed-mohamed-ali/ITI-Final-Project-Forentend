@@ -1,4 +1,28 @@
- @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&family=Roboto+Slab&display=swap');
+
+*{
+    font-family: 'Mitr', sans-serif;
+    box-sizing: border-box;
+
+}
+ 
+.text{
+    color: #3A3F47;
+}
+
+.t1{
+    color: #DC3545;
+
+}
+form{
+    text-align: center;
+}
+.card{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+ /* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
  .card-details {
      width: 70%;
      margin-left: 10%;
@@ -70,4 +94,4 @@
      margin: 50px 0 50px;
      padding: 15px;
      padding-bottom: 20px !important
- }
+ } */

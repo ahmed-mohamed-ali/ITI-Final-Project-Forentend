@@ -3,14 +3,14 @@
     grid-area: 3 / 3 / 4 / 4;
     margin-top: 0px;
     padding: 10px;
-    border: 1px #F74F22 solid;
+    border: 1px #DC3545 solid;
     border-radius: 30px;
     outline: none;
     width: 100%;
     height: 45%;
     border: 1px;
     border-radius: 30px;
-    background-color: #F74F22;
+    background-color: #DC3545;
     font-weight: normal;
     color: white;
     font-size: large;
@@ -21,7 +21,7 @@
     font-weight: lighter;
     background-color: white;
     border: 1px solid #9e9e9e;
-    color: #F74F22;
+    color: #DC3545;
     transition: 0.7s;
 }
 
