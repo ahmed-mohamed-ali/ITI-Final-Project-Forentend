@@ -85,11 +85,12 @@
 
                     </form>
                 </div>
+                <div *ngIf="postsArray?.length == 0" class="alert alert-primary" role="alert">
+                    <p>there is no posts yet</p>
+                </div>
             </div>
 
-            <div *ngIf="postsArray?.length == 0" class="alert alert-primary" role="alert">
-                <p>there is no posts yet</p>
-            </div>
+
         </div>
     </div>
 </main>
