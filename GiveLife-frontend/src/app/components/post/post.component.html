@@ -1,70 +1,26 @@
 <main class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
     <div class="row flex-grow-sm-1 flex-grow-0">
-        <!-- <div class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
-            <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
-                <h6 class="d-none d-sm-block text-muted">Filter Posts</h6>
 
-                <div *ngFor="let item of [0,1,2,3];  let i = index">
-                    <input type="checkbox" value="{{item}}" [checked]="selected1 === i" (change)="selected1 = i"
-                        (change)=" onChangeCat($event)">
-
-                    <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link px-2 text-truncate">
-                                <i class="bi bi-house fs-4"></i>
-                                <span class="d-none d-sm-inline" *ngIf="item==0">Food</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-2 text-truncate">
-                                <i class="bi bi-speedometer fs-4"></i>
-                                <span class="d-none d-sm-inline" *ngIf="item==1">Medicine</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-card-text fs-4"></i>
-                                <span class="d-none d-sm-inline" *ngIf="item==2">Money</span> </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-bricks fs-4"></i>
-                                <span class="d-none d-sm-inline" *ngIf="item==3">Cloths</span> </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div *ngFor="let item of [500,2000,3000];  let i = index">
-                    <input type="checkbox" value="{{item}}" [checked]="selected === i" (change)="selected = i"
-                        (change)=" onChange($event)">{{item}}
-                </div>
-            </div>
-        </div> -->
-
-        <!--  -->
-        <!--  -->
-        <!--  -->
         <div class="container">
 
 
-
             <div class="sidenav">
-                <h4 >Filter Posts</h4>
+                <h4>Filter Posts</h4>
 
                 <a>
                     <div class="categoryFilter" *ngFor="let item of [0,1,2,3];  let i = index">
-                        <input type="checkbox" value="{{item}}" [checked]="selected1 === i" (change)="selected1 = i"
-                            (change)=" onChangeCat($event)">
+                        <input type="checkbox" value="{{item}}" [checked]="selected1 === i" (change)="selected1 = i" (change)=" onChangeCat($event)">
 
-                            <a class="a" *ngIf="item==0"> Food</a>
-                            <a class="a" *ngIf="item==1"> Medicine</a>
-                            <a class="a" *ngIf="item==2"> Money</a>
-                            <a class="a" *ngIf="item==3"> Cloths</a>
+                        <a class="a" *ngIf="item==0"> Food</a>
+                        <a class="a" *ngIf="item==1"> Medicine</a>
+                        <a class="a" *ngIf="item==2"> Money</a>
+                        <a class="a" *ngIf="item==3"> Cloths</a>
                     </div>
                 </a>
                 <br>
                 <a>
                     <div class="categoryFilter" *ngFor="let item of [500,2000,3000];  let i = index">
-                        <input type="checkbox" value="{{item}}" [checked]="selected === i" (change)="selected = i"
-                            (change)=" onChange($event)"><a class="a"> {{item}}</a>
+                        <input type="checkbox" value="{{item}}" [checked]="selected === i" (change)="selected = i" (change)=" onChange($event)"><a class="a"> {{item}}</a>
                     </div>
                 </a>
             </div>
@@ -75,7 +31,7 @@
             <div class=" d-flex flex-row justify-content-around flex-wrap p-5">
 
 
-                
+
 
                 <div class="card align-self-between p-3 mb-5" style="width:30%" *ngFor="let item of postsArray">
                     <form class="card-details ">
@@ -121,8 +77,7 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <div class="div5"><button type="submit"
-                                            (click)="opendonateform(donateform,item.postId)">
+                                    <div class="div5"><button type="submit" (click)="opendonateform(donateform,item.postId)">
                                             Donate <i>♥</i> </button></div>
                                 </div>
                             </div>
@@ -131,82 +86,11 @@
                     </form>
                 </div>
             </div>
-        </div>
 
-        <!-- <div class="col overflow-auto h-100" style="background-color: black;">
-            <div class="bg-light border rounded-3 p-3">
-                <div class="container mx-auto" *ngFor="let item of postsArray">
-                    <div class="container mx-auto">
-                        <div class="card " style="width: 24rem; height:19rem;">
-                            <form class="card-details ">
-                                <div class="form-group">
-
-                                    <div class="row">
-                                        <div id="d23" class="col">
-                                            <p>{{item.postTxt}}</p>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div id="d11" class="col">
-                                            <p class="need ">Need Category</p>
-
-                                        </div>
-                                        <div id="d13" class="col">
-                                            <p class="need">Required Amount</p>
-
-                                        </div>
-                                        <div id="d12" class="col">
-                                            <p class="need">Rest Amount</p>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div id="d11" class="col">
-
-                                            <p class="text-dark " *ngIf="item.needCatogry==0">Food</p>
-                                            <p class="text-dark " *ngIf="item.needCatogry==1">Medicine</p>
-                                            <p class="text-dark " *ngIf="item.needCatogry==2">Money</p>
-                                            <p class="text-dark " *ngIf="item.needCatogry==3">Cloths</p>
-
-                                        </div>
-                                        <div id="d13" class="col">
-                                            <p class="text-dark  ">{{item.requiredAmount}}</p>
-
-                                        </div>
-                                        <div id="d12" class="col">
-                                            <p class="text-dark  ">{{item.restAmount}}</p>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="div5"><button type="submit"
-                                                    (click)="opendonateform(donateform,item.postId)">
-                                                    Donate <i>♥</i> </button></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div *ngIf="postsArray?.length == 0" class="alert alert-primary" role="alert">
+                <p>there is no posts yet</p>
             </div>
-        </div> -->
-
-
-
-
-
-
-        <!--  -->
-        <!--  -->
-        <!--  -->
-        <!--  -->
+        </div>
     </div>
 </main>
 
@@ -234,12 +118,10 @@
                     <div class="parent">
                         <br>
                         <div class="div2">
-                            <input class="form-control" name="Amount" #Amount [(ngModel)]="donnation.Amount"
-                                placeholder="Donated Amount.." required pattern="^[0-9]*$">
+                            <input class="form-control" name="Amount" #Amount [(ngModel)]="donnation.Amount" placeholder="Donated Amount.." required pattern="^[0-9]*$">
                         </div>
                         <br>
-                        <div class="alert alert-warning" role="alert"
-                            *ngIf="donateform.controls.Amount?.touched && donateform.controls.Amount.errors">
+                        <div class="alert alert-warning" role="alert" *ngIf="donateform.controls.Amount?.touched && donateform.controls.Amount.errors">
 
                             <span *ngIf="donateform.controls.Amount.errors.required"> donnation is required</span>
                             <span *ngIf="donateform.controls.Amount.errors.pattern">enter valid amount of money</span>
@@ -249,8 +131,7 @@
                             <span>{{customError.serverError}}</span>
 
                         </div>
-                        <br> <button class="div5 " type=" submit "
-                            [disabled]="donateform.invalid==true&&customError.flag==false">Donate <i>♥</i> </button>
+                        <br> <button class="div5 " type=" submit " [disabled]="donateform.invalid==true&&customError.flag==false">Donate <i>♥</i> </button>
 
                     </div>
                 </div>
@@ -258,4 +139,3 @@
 
         </form>
     </div>
-</ng-template>
