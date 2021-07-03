@@ -1,7 +1,9 @@
+
+
 <div class="page-content page-container" id="page-content">
     <div class="padding">
-        <div class="row container d-flex justify-content-center">
-            <div class="col-xl-6 col-md-12">
+        <div class="container d-flex justify-content-center">
+            <div class=" col-md-12">
                 <div class="card user-card-full">
                     <div class="row m-l-0 m-r-0">
                         <div class="col-sm-4 bg-c-lite-green user-profile">
@@ -60,73 +62,65 @@
 </div>
 <hr class="new4">
 
-<div class="container mx-auto" *ngFor="let item of coordinatorPost">
+<div class="container ">
 
-    <div class="container mx-auto">
+    <div class="d-flex flex-row justify-content-around flex-wrap p-5">
 
-        <div class="card " style="width: 24rem; height:19rem; margin: 10px;
-        display: grid;
-        border-radius: 5px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        border-radius: 15px;
-        margin: 50px 0 50px;
-        padding: 15px;
-        padding-bottom: 10px !important">
-            <form class="card-details ">
-                <div class="form-group">
-
-                    <div class="row">
-                        <div id="d23" class="col">
-                            <p>{{item.postTxt}}</p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div id="d11" class="col">
-                            <p class="need ">Need Category</p>
-
-                        </div>
-
-                        <p class="need">Required Amount</p>
-
-                    </div>
-                    <div id="d12" class="col">
-                        <p class="need">Rest Amount</p>
-                    </div>
-                    <div id="d12" class="col">
-                        <p class="need">Status</p>
-                    </div>
-
+        <div
+      id="card"
+      class="card align-self-between mt-0 p-3 mb-5"
+      *ngFor="let item of coordinatorPost"
+    >
+          <form class="card-details">
+            <div class="form-group">
+              <div>
+                <p>{{ item.postTxt }}</p>
+              </div>
+              <hr />
+              <div>
+                <div>
+                  <span class="need">Need Category : </span>
+                  <span class="text-dark" *ngIf="item.needCatogry == 0">Food</span>
+                  <span class="text-dark" *ngIf="item.needCatogry == 1"
+                    >Medicine</span
+                  >
+                  <span class="text-dark" *ngIf="item.needCatogry == 2">Money</span>
+                  <span class="text-dark" *ngIf="item.needCatogry == 3"
+                    >Cloths</span
+                  >
                 </div>
-                <div class="row">
-                    <div id="d11" class="col">
-
-                        <p class="text-dark " *ngIf="item.needCatogry==0">Food</p>
-                        <p class="text-dark " *ngIf="item.needCatogry==1">Medicine</p>
-                        <p class="text-dark " *ngIf="item.needCatogry==2">Money</p>
-                        <p class="text-dark " *ngIf="item.needCatogry==3">Cloths</p>
-
-                    </div>
-                    <div id="d13" class="col">
-                        <p class="text-dark  ">{{item.requiredAmount}}</p>
-
-                    </div>
-                    <div id="d12" class="col">
-                        <p class="text-dark  ">{{item.restAmount}}</p>
-                    </div>
-                    <div id="d12" class="col">
-
-                        <p class="text-dark " *ngIf="item.status==1">Pending</p>
-                        <p class="text-dark " *ngIf="item.status==2">Completed</p>
-                    </div>
-
+                <div>
+                  <span class="need">Required Amount : </span>
+                  <span class="text-dark">{{ item.requiredAmount }}</span>
                 </div>
+                <div>
+                  <span class="need">Rest Amount : </span>
+                  <span class="text-dark">{{ item.restAmount }}</span>
+                </div>
+                <span class="need">Status : </span>
+                <span class="text-dark " *ngIf="item.status==1">Pending</span>
+                <span class="text-dark " *ngIf="item.status==2">Completed</span>
+              </div>
+    
+              
+            </div>
+          </form>
+          </div>
+      </div>
+      <div
+        *ngIf="coordinatorPost?.length == 0"
+        class="
+          alert alert-danger
+          mt-5
+          d-flex
+          justify-content-center
+          align-items-center
+        "
+        role="alert"
+      >
+        <p>THERE IS NO POSTS YET !!</p>
+      </div>
 
-
-
-            </form>
-        </div>
-
-    </div>
+   
 
 </div>  
