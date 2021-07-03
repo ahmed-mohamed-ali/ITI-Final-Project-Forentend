@@ -22,8 +22,13 @@ export class PostsComponent implements OnInit {
     NeedCatogry:"",
     CaseNationalId:""
   }
+  customError={
+    flag:false,
+    message:""
+  }
 
   ngOnInit(): void {
+    this.customError.flag=false;
   }
   closeResult = '';
   
@@ -39,14 +44,27 @@ export class PostsComponent implements OnInit {
     });
   }
   
+  // openpostform(postform) {
+  //   this.modalService.open(postform,
+  //  {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+  //     this.closeResult = `Closed with: ${result}`;
+  //   }, (reason) => {
+  //     this.closeResult = 
+  //        `Dismissed ${this.getDismissReason(reason)}`;
+  //   });
+  // }
+
+  modalReference
   openpostform(postform) {
-    this.modalService.open(postform,
-   {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+            
+    this.modalReference = this.modalService.open(postform);
+    this.modalReference.result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
-      this.closeResult = 
-         `Dismissed ${this.getDismissReason(reason)}`;
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+ 
+    
   }
 
   private getDismissReason(reason: any): string {
@@ -63,21 +81,29 @@ export class PostsComponent implements OnInit {
     console.log(this.post);
 
     this.subscriber=this.jwtservice.publishPost(this.post).subscribe(res =>{
-
+      this.customError.flag==false
       let response:any=res;
       if(response.success){
         console.log(response);
+        this.customError.flag=true
+        this.modalReference.close();
         window.location.reload();
         
       }
     
     },err=>{
-      this.errorHandler.handleError(err);
+        if(err.status==404){
+          this.customError.flag=true;
+          this.customError.message=err.error
+        }
+        console.log(err.error)
+        console.log(err.status)
+        console.log(err.statusText)
+        console.log(err.message)
+
+        this.errorHandler.handleError(err);
         this.errorMessage = this.errorHandler.errorMessage;
-      console.log(err.error)
-      console.log(err.status)
-      console.log(err.statusText)
-      console.log(err.message)
+      
     })
     
   }

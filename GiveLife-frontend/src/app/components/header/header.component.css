@@ -12,9 +12,10 @@ nav {
 
 #tomakespace {
     margin-left: 7px;
+
 }
 
-.div5 {
+/* .div5 {
     grid-area: 3 / 3 / 4 / 4;
     margin-top: 0px;
     padding: 10px;
@@ -29,7 +30,7 @@ nav {
     font-weight: normal;
     color: white;
     font-size: large;
-}
+} */
 
 .pesronicon:hover{
     border: 2px #DC3545 solid;
@@ -44,13 +45,13 @@ nav {
 .donate {
     /* width: 100%;
     height: 55px; */
+    padding : 8px 15px ;
     border: 1px;
     border-radius: 30px;
     background-color: #DC3545;
     font-weight: lighter;
     color: white;
     font-size: larger;
-    /* margin-top: 20px; */
 }
 
 

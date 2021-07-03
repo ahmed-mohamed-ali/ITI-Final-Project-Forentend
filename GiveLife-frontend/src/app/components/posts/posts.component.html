@@ -1,48 +1,8 @@
 <button class="btn btn-outline-danger" id="publichstyle" (click)="openpostform(postform)">Publish Post</button>
-<br>
+
 <br>
 <br>
 
-<!-- <main class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
-    <div class="row flex-grow-sm-1 flex-grow-0">
-        <div class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
-            <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
-                <h6 class="d-none d-sm-block text-muted">Sticky Sidebar</h6>
-                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link px-2 text-truncate">
-                            <i class="bi bi-house fs-4"></i>
-                            <span class="d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-2 text-truncate">
-                            <i class="bi bi-speedometer fs-4"></i>
-                            <span class="d-none d-sm-inline">Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-card-text fs-4"></i>
-                            <span class="d-none d-sm-inline">Orders</span> </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-bricks fs-4"></i>
-                            <span class="d-none d-sm-inline">Products</span> </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-people fs-4"></i>
-                            <span class="d-none d-sm-inline">Customers</span> </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col overflow-auto h-100">
-            <div class="bg-light border rounded-3 p-3">
-                <app-post></app-post>
-            </div>
-        </div>
-    </div>
-</main> -->
 
 <app-post></app-post>
 
@@ -98,9 +58,12 @@
                             <span *ngIf="postform.controls.NeedCatogry.errors.required">specify need catogry</span>
                         </div>
                         <br>
+                        <div class="alert alert-warning" role="alert" *ngIf=" this.customError.flag">
+                            <span>{{this.customError.message}}</span>
 
+                        </div>
 
-                        <button class="div5 " type=" submit " [disabled]="postform.invalid==true" (click)="modal.dismiss('Cross click')">Publish <i>♥</i> </button>
+                        <button class="div5 " type=" submit " [disabled]="postform.invalid==true&&this.customError.flag==false">Publish <i>♥</i> </button>
 
                     </div>
                 </div>
