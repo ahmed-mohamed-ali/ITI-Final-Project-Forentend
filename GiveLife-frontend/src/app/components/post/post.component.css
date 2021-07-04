@@ -20,7 +20,17 @@ button {
   color: white;
   font-size: large;
 }
-
+button[aria-label="Close"] {
+  padding: 5px 10px;
+  /* width: 50%;
+  height: 38px; */
+  border-radius: 5px;
+  border: none;
+  background-color: #dc3545;
+  font-weight: normal;
+  color: white;
+  font-size: large;
+}
 button:hover {
   background-color: white;
   border: 1px solid #dc3545;
