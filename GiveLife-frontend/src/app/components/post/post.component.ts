@@ -37,7 +37,7 @@ export class PostComponent implements OnInit {
         console.log(response);
         this.customError.flag=false
         this.modalReference.close();
-        
+        window.location.reload();
       
           }
     
