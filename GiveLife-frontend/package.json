@@ -8,7 +8,6 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "typescript": "~4.1.5",
         "heroku-postbuild": "ng build --prod"
     },
     "private": true,
@@ -42,6 +41,7 @@
         "visus": "0.0.1",
         "vivus": "^0.4.6",
         "zone.js": "~0.11.3"
+
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~0.1102.3",
