@@ -8,7 +8,7 @@ import{TestComponent} from "./test/test.component"
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import {ConnectionServiceModule} from 'ng-connection-service';  
 //Authentication component
 import { JwtService } from './service/jwt.service';
 
@@ -68,7 +68,8 @@ import { ServerErrorComponent } from './components/server-error/server-error.com
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    ConnectionServiceModule  
 
   ],
   providers: [JwtService,AuthGuardService],
