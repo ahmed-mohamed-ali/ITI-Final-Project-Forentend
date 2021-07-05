@@ -63,3 +63,24 @@ h2 {
   color: black;
   outline: none;
 }
+
+@media only screen and (max-width: 505px) {
+  h2{
+    font-size: 40px;
+    padding: 2px;
+  }
+  .formElement,
+  .form-select {
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  }
+  #submit {
+    width: 100%;
+    margin: 20px 0% 0px 0%;
+
+  }
+  #formDiv {
+    width: 70%;
+  }
+}
