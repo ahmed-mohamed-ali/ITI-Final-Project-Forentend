@@ -5,21 +5,6 @@
   /* margin: 0px; */
   padding: 0px;
 }
-/* footer {
-  display: flex;
-  width: 100%;
-  height: 200px;
-
-  background: -webkit-gradient(
-    linear,
-    top left,
-    right bottom,
-    from(#c32232),
-    to(#e87d88)
-  );
-  background: linear-gradient(to bottom, #e87d88, #c32232); */
-
-/*   footer  */
 
 .site-footer {
   background-color: #f8f9fa;
