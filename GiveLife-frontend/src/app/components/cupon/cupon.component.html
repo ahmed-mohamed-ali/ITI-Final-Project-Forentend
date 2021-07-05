@@ -2,7 +2,7 @@
 
     <div class=" d-flex flex-row justify-content-around flex-wrap p-5">
 
-        <div class="card align-self-between p-3 mb-5" style="width:30%" *ngFor="let cupon of cupons">
+        <div class="card align-self-between p-3 mb-5" *ngFor="let cupon of cupons">
             <form class="card-details ">
                 <div class="form-group">
                     <!-- <p class="text-warning mb-0">Cupon Identity</p> -->
@@ -10,7 +10,7 @@
                         </span> {{cupon.cuponIdentity}}</p>
 
                     <!-- <p class="text-warning mb-0">NationalID</p> -->
-                    <p class="text" type="text" name="name" placeholder="Id"><span class="t1">NationalID : </span> {{cupon.caseNational.nationalId}}
+                    <p class="text" type="text" name="name" placeholder="Id"><span class="t1">National ID : </span> {{cupon.caseNational.nationalId}}
                     </p>
 
                     <!-- <p class="text-warning mb-0">Case Name</p> -->
