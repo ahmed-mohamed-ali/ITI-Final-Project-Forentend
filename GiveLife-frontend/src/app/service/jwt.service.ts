@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import {environment} from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class JwtService implements OnInit {
 
-ApiURl="https://givelife.azurewebsites.net";
+ApiURl=environment.ApiURl;
   constructor(public httpclient:HttpClient) {
      
    }

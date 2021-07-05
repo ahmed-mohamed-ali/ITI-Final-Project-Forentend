@@ -56,6 +56,7 @@ export class PostComponent implements OnInit {
   })
   }
   ngOnInit(): void {
+
     this.subscriber=this.jwtservice.getRegionPost().subscribe(res =>{
 
       let response:any=res;
@@ -227,6 +228,7 @@ onChangeCat(event: any){
 
 modalReference
   opendonateform(donateform,postId) {
+    this.customError.flag=false;
     this.donnation.Amount="";
     
     this.PostId=postId;

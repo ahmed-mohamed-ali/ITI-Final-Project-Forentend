@@ -29,6 +29,12 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.customError.flag=false;
+    this.post={
+      PostMessage:"",
+      RequiredAmount:"",
+      NeedCatogry:"",
+      CaseNationalId:""
+    }
   }
   closeResult = '';
   
@@ -56,6 +62,13 @@ export class PostsComponent implements OnInit {
 
   modalReference
   openpostform(postform) {
+    this.post={
+      PostMessage:"",
+      RequiredAmount:"",
+      NeedCatogry:"",
+      CaseNationalId:""
+    }
+    this.customError.flag=false;
             
     this.modalReference = this.modalService.open(postform);
     this.modalReference.result.then((result) => {
@@ -85,7 +98,7 @@ export class PostsComponent implements OnInit {
       let response:any=res;
       if(response.success){
         console.log(response);
-        this.customError.flag=true
+        this.customError.flag=false
         this.modalReference.close();
         window.location.reload();
         
@@ -95,6 +108,7 @@ export class PostsComponent implements OnInit {
         if(err.status==404){
           this.customError.flag=true;
           this.customError.message=err.error
+          return;
         }
         console.log(err.error)
         console.log(err.status)
